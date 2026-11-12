@@ -1,0 +1,1548 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix uni:    <http://www.ics.forth.gr/uniStats/ontology/> .
+@prefix unires: <http://www.ics.forth.gr/uniStats/resource/> .
+@prefix geo:    <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+# ============================================================
+# COMPLETE NORMALIZED TTL
+# Every source row contains the full chain:
+# University -> School -> Department -> BSc -> City -> Region
+# ============================================================
+
+# ROW 1
+<https://www.auth.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'ΑΡΙΣΤΟΤΕΛΕΙΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΘΕΣ/ΝΙΚΗΣ'@el ;
+    rdfs:label 'Aristotle University of Thessaloniki'@en ;
+    uni:hasSchool <https://www.auth.gr/faculty/sci/> .
+
+<https://www.auth.gr/faculty/sci/>
+    rdf:type uni:School ;
+    rdfs:label 'Σχολή Θετικών Επιστημών'@el ;
+    rdfs:label 'Faculty of Sciences'@en ;
+    uni:hasDepartment <http://www.csd.auth.gr/> .
+
+<http://www.csd.auth.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "1"^^xsd:integer ;
+    rdfs:label 'ΠΛΗΡΟΦΟΡΙΚΗΣ (ΘΕΣΣΑΛΟΝΙΚΗ)'@el ;
+    rdfs:label 'Informatics (Thessaloniki)'@en ;
+    uni:hasUniversityProgram <http://www.csd.auth.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Thessaloniki> ;
+    geo:lat "40.6227155"^^xsd:float ;
+    geo:long "22.8141921"^^xsd:float .
+
+<http://www.csd.auth.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Thessaloniki>
+    rdf:type uni:City ;
+    rdfs:label 'Thessaloniki'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Central_Macedonia> .
+
+<http://dbpedia.org/resource/Central_Macedonia>
+    rdf:type uni:Region ;
+    rdfs:label 'Central Macedonia'@en .
+
+# ROW 2
+<https://www.auth.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'ΑΡΙΣΤΟΤΕΛΕΙΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΘΕΣ/ΝΙΚΗΣ'@el ;
+    rdfs:label 'Aristotle University of Thessaloniki'@en ;
+    uni:hasSchool <https://www.auth.gr/school/ee/> .
+
+<https://www.auth.gr/school/ee/>
+    rdf:type uni:School ;
+    rdfs:label 'Πολυτεχνική Σχολή'@el ;
+    rdfs:label 'Faculty of Engineering'@en ;
+    uni:hasDepartment <https://www.auth.gr/en/school/ee-en/> .
+
+<https://www.auth.gr/en/school/ee-en/>
+    rdf:type uni:Department ;
+    uni:sourceID "2"^^xsd:integer ;
+    rdfs:label 'ΗΛΕΚΤΡΟΛΟΓΩΝ ΜΗΧΑΝΙΚΩΝ ΚΑΙ ΜΗΧΑΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ (ΘΕΣΣΑΛΟΝΙΚΗ)'@el ;
+    rdfs:label 'Electrical and Computer Engineering (Thessaloniki)'@en ;
+    uni:hasUniversityProgram <https://www.auth.gr/en/school/ee-en/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Thessaloniki> ;
+    geo:lat "40.6273415"^^xsd:float ;
+    geo:long "22.9496087"^^xsd:float .
+
+<https://www.auth.gr/en/school/ee-en/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "5"^^xsd:integer .
+
+<http://dbpedia.org/resource/Thessaloniki>
+    rdf:type uni:City ;
+    rdfs:label 'Thessaloniki'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Central_Macedonia> .
+
+<http://dbpedia.org/resource/Central_Macedonia>
+    rdf:type uni:Region ;
+    rdfs:label 'Central Macedonia'@en .
+
+# ROW 3
+<https://www.ihu.gr>
+    rdf:type uni:University ;
+    rdfs:label 'ΔΙΕΘΝΕΣ ΠΑΝΕΠΙΣΤΗΜΙΟ ΤΗΣ ΕΛΛΑΔΟΣ'@el ;
+    rdfs:label 'International Hellenic University'@en ;
+    uni:hasSchool <https://www.ihu.gr/sxoles/polytechniki-sxoli> .
+
+<https://www.ihu.gr/sxoles/polytechniki-sxoli>
+    rdf:type uni:School ;
+    rdfs:label 'Πολυτεχνική Σχολή'@el ;
+    rdfs:label 'School of Engineering'@en ;
+    uni:hasDepartment <https://www.iee.ihu.gr/> .
+
+<https://www.iee.ihu.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "3"^^xsd:integer ;
+    rdfs:label 'ΜΗΧΑΝΙΚΩΝ ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΗΛΕΚΤΡΟΝΙΚΩΝ ΣΥΣΤΗΜΑΤΩΝ (ΘΕΣΣΑΛΟΝΙΚΗ)'@el ;
+    rdfs:label 'Information and Electronic Engineering (Thessaloniki)'@en ;
+    uni:hasUniversityProgram <https://www.iee.ihu.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Thessaloniki> ;
+    geo:lat "40.6558013"^^xsd:float ;
+    geo:long "22.8023161"^^xsd:float .
+
+<https://www.iee.ihu.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "5"^^xsd:integer .
+
+<http://dbpedia.org/resource/Thessaloniki>
+    rdf:type uni:City ;
+    rdfs:label 'Thessaloniki'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Central_Macedonia> .
+
+<http://dbpedia.org/resource/Central_Macedonia>
+    rdf:type uni:Region ;
+    rdfs:label 'Central Macedonia'@en .
+
+# ROW 4
+<https://www.ihu.gr>
+    rdf:type uni:University ;
+    rdfs:label 'ΔΙΕΘΝΕΣ ΠΑΝΕΠΙΣΤΗΜΙΟ ΤΗΣ ΕΛΛΑΔΟΣ'@el ;
+    rdfs:label 'International Hellenic University'@en ;
+    uni:hasSchool <https://www.ihu.gr/sxoles/polytechniki-sxoli> .
+
+<https://www.ihu.gr/sxoles/polytechniki-sxoli>
+    rdf:type uni:School ;
+    rdfs:label 'Πολυτεχνική Σχολή'@el ;
+    rdfs:label 'School of Engineering'@en ;
+    uni:hasDepartment <https://www.ict.ihu.gr/> .
+
+<https://www.ict.ihu.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "4"^^xsd:integer ;
+    rdfs:label 'ΜΗΧΑΝΙΚΩΝ ΠΛΗΡΟΦΟΡΙΚΗΣ, ΥΠΟΛΟΓΙΣΤΩΝ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ (ΣΕΡΡΕΣ)'@el ;
+    rdfs:label 'Information, Computer and Telecommunications Engineering (Serres)'@en ;
+    uni:hasUniversityProgram <https://www.ict.ihu.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Serres> ;
+    geo:lat "41.0748985"^^xsd:float ;
+    geo:long "23.5504721"^^xsd:float .
+
+<https://www.ict.ihu.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "5"^^xsd:integer .
+
+<http://dbpedia.org/resource/Serres>
+    rdf:type uni:City ;
+    rdfs:label 'Serres'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Central_Macedonia> .
+
+<http://dbpedia.org/resource/Central_Macedonia>
+    rdf:type uni:Region ;
+    rdfs:label 'Central Macedonia'@en .
+
+# ROW 5
+<https://duth.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'ΔΗΜΟΚΡΙΤΕΙΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΘΡΑΚΗΣ'@el ;
+    rdfs:label 'Democritus University of Thrace'@en ;
+    uni:hasSchool <https://duth.gr/faculty/sci/> .
+
+<https://duth.gr/faculty/sci/>
+    rdf:type uni:School ;
+    rdfs:label 'Σχολή Θετικών Επιστήμων'@el ;
+    rdfs:label 'Faculty of Sciences'@en ;
+    uni:hasDepartment <https://www.cs.duth.gr/> .
+
+<https://www.cs.duth.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "5"^^xsd:integer ;
+    rdfs:label 'Πληροφορικής (Καβάλα)'@el ;
+    rdfs:label 'Informatics (Kavala)'@en ;
+    uni:hasUniversityProgram <https://www.cs.duth.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Kavala> ;
+    geo:lat "40.9292981"^^xsd:float ;
+    geo:long "24.3409184"^^xsd:float .
+
+<https://www.cs.duth.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Kavala>
+    rdf:type uni:City ;
+    rdfs:label 'Kavala'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/East_Macedonia_and_Thrace> .
+
+<http://dbpedia.org/resource/East_Macedonia_and_Thrace>
+    rdf:type uni:Region ;
+    rdfs:label 'Eastern Macedonia and Thrace'@en .
+
+# ROW 6
+<https://duth.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'ΔΗΜΟΚΡΙΤΕΙΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΘΡΑΚΗΣ'@el ;
+    rdfs:label 'Democritus University of Thrace'@en ;
+    uni:hasSchool <https://duth.gr/faculty/eng/> .
+
+<https://duth.gr/faculty/eng/>
+    rdf:type uni:School ;
+    rdfs:label 'Πολυτεχνική Σχολή'@el ;
+    rdfs:label 'School of Engineering'@en ;
+    uni:hasDepartment <https://www.ee.duth.gr/> .
+
+<https://www.ee.duth.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "6"^^xsd:integer ;
+    rdfs:label 'ΗΛΕΚΤΡΟΛΟΓΩΝ ΜΗΧΑΝΙΚΩΝ ΚΑΙ ΜΗΧΑΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ (ΞΑΝΘΗ)'@el ;
+    rdfs:label 'Electrical and Computer Engineering (Xanthi)'@en ;
+    uni:hasUniversityProgram <https://www.ee.duth.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Xanthi> ;
+    geo:lat "41.1406045"^^xsd:float ;
+    geo:long "24.891839"^^xsd:float .
+
+<https://www.ee.duth.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "5"^^xsd:integer .
+
+<http://dbpedia.org/resource/Xanthi>
+    rdf:type uni:City ;
+    rdfs:label 'Xanthi'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/East_Macedonia_and_Thrace> .
+
+<http://dbpedia.org/resource/East_Macedonia_and_Thrace>
+    rdf:type uni:Region ;
+    rdfs:label 'East Macedonia and Thrace'@en .
+
+# ROW 7
+<https://www.uoa.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'ΕΘΝΙΚΟ ΚΑΙ ΚΑΠΟΔΙΣΤΡΙΑΚΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΑΘΗΝΩΝ'@el ;
+    rdfs:label 'National and Kapodistrian University of Athens'@en ;
+    uni:hasSchool <https://www.uoa.gr/scholes_kai_tmimata/thetikon_epistimon> .
+
+<https://www.uoa.gr/scholes_kai_tmimata/thetikon_epistimon>
+    rdf:type uni:School ;
+    rdfs:label 'Σχολή Θετικών Επιστημών'@el ;
+    rdfs:label 'School of Science'@en ;
+    uni:hasDepartment <http://www.di.uoa.gr/> .
+
+<http://www.di.uoa.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "7"^^xsd:integer ;
+    rdfs:label 'ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ (ΑΘΗΝΑ)'@el ;
+    rdfs:label 'Informatics and Telecommunications (Athens)'@en ;
+    uni:hasUniversityProgram <http://www.di.uoa.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Athens> ;
+    geo:lat "37.968141"^^xsd:float ;
+    geo:long "23.7639359"^^xsd:float .
+
+<http://www.di.uoa.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Athens>
+    rdf:type uni:City ;
+    rdfs:label 'Athens'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Attica> .
+
+<http://dbpedia.org/resource/Attica>
+    rdf:type uni:Region ;
+    rdfs:label 'Attica'@en .
+
+# ROW 8
+<https://www.ntua.gr/el>
+    rdf:type uni:University ;
+    rdfs:label 'ΕΘΝΙΚΟ ΜΕΤΣΟΒΙΟ ΠΟΛΥΤΕΧΝΕΙΟ'@el ;
+    rdfs:label 'National Technical University of Athens'@en ;
+    uni:hasSchool <https://www.ntua.gr/el/schools> .
+
+<https://www.ntua.gr/el/schools>
+    rdf:type uni:School ;
+    rdfs:label 'Πολυτεχνική Σχολή'@el ;
+    rdfs:label 'School of Engineering'@en ;
+    uni:hasDepartment <https://www.ece.ntua.gr/> .
+
+<https://www.ece.ntua.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "8"^^xsd:integer ;
+    rdfs:label 'ΗΛΕΚΤΡΟΛΟΓΩΝ ΜΗΧΑΝΙΚΩΝ ΚΑΙ ΜΗΧΑΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ (ΑΘΗΝΑ)'@el ;
+    rdfs:label 'Electrical and Computer Engineering (Athens)'@en ;
+    uni:hasUniversityProgram <https://www.ece.ntua.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Athens> ;
+    geo:lat "37.979002"^^xsd:float ;
+    geo:long "23.7801621"^^xsd:float .
+
+<https://www.ece.ntua.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "5"^^xsd:integer .
+
+<http://dbpedia.org/resource/Athens>
+    rdf:type uni:City ;
+    rdfs:label 'Athens'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Attica> .
+
+<http://dbpedia.org/resource/Attica>
+    rdf:type uni:Region ;
+    rdfs:label 'Attica'@en .
+
+# ROW 9
+<https://hmu.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'ΕΛΛΗΝΙΚΟ ΜΕΣΟΓΕΙΑΚΟ ΠΑΝΕΠΙΣΤΗΜΙΟ'@el ;
+    rdfs:label 'Hellenic Mediterranean University'@en ;
+    uni:hasSchool <https://hmu.gr/polytechniki-scholi/> .
+
+<https://hmu.gr/polytechniki-scholi/>
+    rdf:type uni:School ;
+    rdfs:label 'Πολυτεχνική Σχολή'@el ;
+    rdfs:label 'School of Engineering'@en ;
+    uni:hasDepartment <https://ece.hmu.gr/> .
+
+<https://ece.hmu.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "9"^^xsd:integer ;
+    rdfs:label 'ΗΛΕΚΤΡΟΛΟΓΩΝ ΜΗΧΑΝΙΚΩΝ ΚΑΙ ΜΗΧΑΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ (ΗΡΑΚΛΕΙΟ)'@el ;
+    rdfs:label 'Electrical and Computer Engineering (Heraklion)'@en ;
+    uni:hasUniversityProgram <https://ece.hmu.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Heraklion> ;
+    geo:lat "35.3176775"^^xsd:float ;
+    geo:long "25.099976"^^xsd:float .
+
+<https://ece.hmu.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "5"^^xsd:integer .
+
+<http://dbpedia.org/resource/Heraklion>
+    rdf:type uni:City ;
+    rdfs:label 'Heraklion'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Crete> .
+
+<http://dbpedia.org/resource/Crete>
+    rdf:type uni:Region ;
+    rdfs:label 'Crete'@en .
+
+# ROW 10
+<https://aueb.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'ΟΙΚΟΝΟΜΙΚΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΑΘΗΝΩΝ'@el ;
+    rdfs:label 'Athens University of Economics and Business'@en ;
+    uni:hasSchool <https://www.dept.aueb.gr/el/school_of_information> .
+
+<https://www.dept.aueb.gr/el/school_of_information>
+    rdf:type uni:School ;
+    rdfs:label 'ΣΧΟΛΗ ΕΠΙΣΤΗΜΩΝ ΚΑΙ ΤΕΧΝΟΛΟΓΙΑΣ ΤΗΣ ΠΛΗΡΟΦΟΡΙΑΣ'@el ;
+    rdfs:label 'School of Information Sciences and Technology'@en ;
+    uni:hasDepartment <http://www.cs.aueb.gr/> .
+
+<http://www.cs.aueb.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "10"^^xsd:integer ;
+    rdfs:label 'ΠΛΗΡΟΦΟΡΙΚΗΣ (ΑΘΗΝΑ)'@el ;
+    rdfs:label 'Informatics (Athens)'@en ;
+    uni:hasUniversityProgram <http://www.cs.aueb.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Athens> ;
+    geo:lat "37.9940707"^^xsd:float ;
+    geo:long "23.7272327"^^xsd:float .
+
+<http://www.cs.aueb.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Athens>
+    rdf:type uni:City ;
+    rdfs:label 'Athens'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Attica> .
+
+<http://dbpedia.org/resource/Attica>
+    rdf:type uni:Region ;
+    rdfs:label 'Attica'@en .
+
+# ROW 11
+<https://www.aegean.gr>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Αιγαίου'@el ;
+    rdfs:label 'University of the Aegean'@en ;
+    uni:hasSchool <http://eng.aegean.gr/> .
+
+<http://eng.aegean.gr/>
+    rdf:type uni:School ;
+    rdfs:label 'Πολυτεχνική Σχολή'@el ;
+    rdfs:label 'School of Engineering'@en ;
+    uni:hasDepartment <https://www.icsd.aegean.gr/> .
+
+<https://www.icsd.aegean.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "11"^^xsd:integer ;
+    rdfs:label 'ΜΗΧΑΝΙΚΩΝ ΠΛΗΡΟΦΟΡΙΑΚΩΝ ΚΑΙ ΕΠΙΚΟΙΝΩΝΙΑΚΩΝ ΣΥΣΤΗΜΑΤΩΝ (ΣΑΜΟΥ)'@el ;
+    rdfs:label 'Information and Communication Systems Engineering (Samos)'@en ;
+    uni:hasUniversityProgram <https://www.icsd.aegean.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Samos> ;
+    geo:lat "37.795991"^^xsd:float ;
+    geo:long "26.7024766"^^xsd:float .
+
+<https://www.icsd.aegean.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "5"^^xsd:integer .
+
+<http://dbpedia.org/resource/Samos>
+    rdf:type uni:City ;
+    rdfs:label 'Samos'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/North_Aegean> .
+
+<http://dbpedia.org/resource/North_Aegean>
+    rdf:type uni:Region ;
+    rdfs:label 'North Aegean'@en .
+
+# ROW 12
+<https://www.uniwa.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Δυτικής Αττικής'@el ;
+    rdfs:label 'University of West Attica'@en ;
+    uni:hasSchool <https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/> .
+
+<https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/>
+    rdf:type uni:School ;
+    rdfs:label 'Πολυτεχνική Σχολή'@el ;
+    rdfs:label 'School of Engineering'@en ;
+    uni:hasDepartment <https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/ice/> .
+
+<https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/ice/>
+    rdf:type uni:Department ;
+    uni:sourceID "12"^^xsd:integer ;
+    rdfs:label 'ΜΗΧΑΝΙΚΩΝ ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΥΠΟΛΟΓΙΣΤΩΝ (ΑΙΓΑΛΕΩ)'@el ;
+    rdfs:label 'Computer Engineering and Informatics (Egaleo)'@en ;
+    uni:hasUniversityProgram <https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/ice/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Egaleo> ;
+    geo:lat "38.0024922"^^xsd:float ;
+    geo:long "23.6739996"^^xsd:float .
+
+<https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/ice/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "5"^^xsd:integer .
+
+<http://dbpedia.org/resource/Egaleo>
+    rdf:type uni:City ;
+    rdfs:label 'Egaleo'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Attica> .
+
+<http://dbpedia.org/resource/Attica>
+    rdf:type uni:Region ;
+    rdfs:label 'Attica'@en .
+
+# ROW 13
+<https://www.uowm.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Δυτικής Μακεδονίας'@el ;
+    rdfs:label 'University of Western Macedonia'@en ;
+    uni:hasSchool <https://eng.uowm.gr/> .
+
+<https://eng.uowm.gr/>
+    rdf:type uni:School ;
+    rdfs:label 'Πολυτεχνική Σχολή'@el ;
+    rdfs:label 'School of Engineering'@en ;
+    uni:hasDepartment <https://ece.uowm.gr/> .
+
+<https://ece.uowm.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "13"^^xsd:integer ;
+    rdfs:label 'ΗΛΕΚΤΡΟΛΟΓΩΝ ΜΗΧΑΝΙΚΩΝ ΚΑΙ ΜΗΧΑΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ (ΚΟΖΑΝΗ)'@el ;
+    rdfs:label 'Electrical and Computer Engineering (Kozani)'@en ;
+    uni:hasUniversityProgram <https://ece.uowm.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Kozani> ;
+    geo:lat "40.2788874"^^xsd:float ;
+    geo:long "21.7328198"^^xsd:float .
+
+<https://ece.uowm.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "5"^^xsd:integer .
+
+<http://dbpedia.org/resource/Kozani>
+    rdf:type uni:City ;
+    rdfs:label 'Kozani'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Western_Macedonia> .
+
+<http://dbpedia.org/resource/Western_Macedonia>
+    rdf:type uni:Region ;
+    rdfs:label 'Western Macedonia'@en .
+
+# ROW 14
+<https://www.uowm.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Δυτικής Μακεδονίας'@el ;
+    rdfs:label 'University of Western Macedonia'@en ;
+    uni:hasSchool <https://sci.uowm.gr/> .
+
+<https://sci.uowm.gr/>
+    rdf:type uni:School ;
+    rdfs:label 'Σχολή Θετικών Επιστήμων'@el ;
+    rdfs:label 'Faculty of Science'@en ;
+    uni:hasDepartment <https://cs.uowm.gr/> .
+
+<https://cs.uowm.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "14"^^xsd:integer ;
+    rdfs:label 'ΠΛΗΡΟΦΟΡΙΚΗΣ (ΚΑΣΤΟΡΙΑ)'@el ;
+    rdfs:label 'Informatics (Kastoria)'@en ;
+    uni:hasUniversityProgram <https://cs.uowm.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Kastoria> ;
+    geo:lat "40.5210128"^^xsd:float ;
+    geo:long "21.2559418"^^xsd:float .
+
+<https://cs.uowm.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Kastoria>
+    rdf:type uni:City ;
+    rdfs:label 'Kastoria'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Western_Macedonia> .
+
+<http://dbpedia.org/resource/Western_Macedonia>
+    rdf:type uni:Region ;
+    rdfs:label 'Western Macedonia'@en .
+
+# ROW 15
+<https://www.uth.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Θεσσαλίας'@el ;
+    rdfs:label 'University of Thessaly'@en ;
+    uni:hasSchool <https://www.uth.gr/spoydes/proptychiakes/schools-departments/polytehniki-sholi> .
+
+<https://www.uth.gr/spoydes/proptychiakes/schools-departments/polytehniki-sholi>
+    rdf:type uni:School ;
+    rdfs:label 'Πολυτεχνική Σχολή'@el ;
+    rdfs:label 'School of Engineering'@en ;
+    uni:hasDepartment <https://www.e-ce.uth.gr/> .
+
+<https://www.e-ce.uth.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "15"^^xsd:integer ;
+    rdfs:label 'ΗΛΕΚΤΡΟΛΟΓΩΝ ΜΗΧΑΝΙΚΩΝ ΚΑΙ ΜΗΧΑΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ (ΒΟΛΟΣ)'@el ;
+    rdfs:label 'Electrical and Computer Engineering (Volos)'@en ;
+    uni:hasUniversityProgram <https://www.e-ce.uth.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Volos> ;
+    geo:lat "39.3607365"^^xsd:float ;
+    geo:long "22.9279123"^^xsd:float .
+
+<https://www.e-ce.uth.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "5"^^xsd:integer .
+
+<http://dbpedia.org/resource/Volos>
+    rdf:type uni:City ;
+    rdfs:label 'Volos'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Thessaly> .
+
+<http://dbpedia.org/resource/Thessaly>
+    rdf:type uni:Region ;
+    rdfs:label 'Thessaly'@en .
+
+# ROW 16
+<https://www.uth.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Θεσσαλίας'@el ;
+    rdfs:label 'University of Thessaly'@en ;
+    uni:hasSchool <https://www.uth.gr/spoydes/proptychiakes/schools-departments/sholi-thetikon-epistimon> .
+
+<https://www.uth.gr/spoydes/proptychiakes/schools-departments/sholi-thetikon-epistimon>
+    rdf:type uni:School ;
+    rdfs:label 'Σχολή Θετικών Επιστήμων'@el ;
+    rdfs:label 'Faculty of Science'@en ;
+    uni:hasDepartment <http://www.dib.uth.gr> .
+
+<http://www.dib.uth.gr>
+    rdf:type uni:Department ;
+    uni:sourceID "16"^^xsd:integer ;
+    rdfs:label 'ΠΛΗΡΟΦΟΡΙΚΗΣ ΜΕ ΕΦΑΡΜΟΓΕΣ ΣΤΗ ΒΙΟΪΑΤΡΙΚΗ (ΛΑΜΙΑ)'@el ;
+    rdfs:label 'Informatics with Applications in Biomedicine (Lamia)'@en ;
+    uni:hasUniversityProgram <http://www.dib.uth.gr#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Lamia> ;
+    geo:lat "38.9125737"^^xsd:float ;
+    geo:long "22.4253247"^^xsd:float .
+
+<http://www.dib.uth.gr#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Lamia>
+    rdf:type uni:City ;
+    rdfs:label 'Lamia'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Central_Greece> .
+
+<http://dbpedia.org/resource/Central_Greece>
+    rdf:type uni:Region ;
+    rdfs:label 'Central Greece'@en .
+
+# ROW 17
+<https://www.uth.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Θεσσαλίας'@el ;
+    rdfs:label 'University of Thessaly'@en ;
+    uni:hasSchool <https://www.uth.gr/spoydes/proptychiakes/schools-departments/sholi-thetikon-epistimon> .
+
+<https://www.uth.gr/spoydes/proptychiakes/schools-departments/sholi-thetikon-epistimon>
+    rdf:type uni:School ;
+    rdfs:label 'Σχολή Θετικών Επιστήμων'@el ;
+    rdfs:label 'Faculty of Science'@en ;
+    uni:hasDepartment <https://dit.uth.gr/> .
+
+<https://dit.uth.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "17"^^xsd:integer ;
+    rdfs:label 'ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ (ΛΑΜΙΑ)'@el ;
+    rdfs:label 'Informatics and Telecommunications (Lamia)'@en ;
+    uni:hasUniversityProgram <https://dit.uth.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Lamia> ;
+    geo:lat "38.8751521"^^xsd:float ;
+    geo:long "22.4350691"^^xsd:float .
+
+<https://dit.uth.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Lamia>
+    rdf:type uni:City ;
+    rdfs:label 'Lamia'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Central_Greece> .
+
+<http://dbpedia.org/resource/Central_Greece>
+    rdf:type uni:Region ;
+    rdfs:label 'Central Greece'@en .
+
+# ROW 18
+<https://www.uth.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Θεσσαλίας'@el ;
+    rdfs:label 'University of Thessaly'@en ;
+    uni:hasSchool <https://www.uth.gr/spoydes/proptychiakes/schools-departments/sholi-tehnologias> .
+
+<https://www.uth.gr/spoydes/proptychiakes/schools-departments/sholi-tehnologias>
+    rdf:type uni:School ;
+    rdfs:label 'Σχολή Τεχνολογίας'@el ;
+    rdfs:label 'School of Technology'@en ;
+    uni:hasDepartment <https://ds.uth.gr> .
+
+<https://ds.uth.gr>
+    rdf:type uni:Department ;
+    uni:sourceID "18"^^xsd:integer ;
+    rdfs:label 'ΨΗΦΙΑΚΩΝ ΣΥΣΤΗΜΑΤΩΝ (ΛΑΡΙΣΑΣ)'@el ;
+    rdfs:label 'Digital Systems (Larissa)'@en ;
+    uni:hasUniversityProgram <https://ds.uth.gr#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Larissa> ;
+    geo:lat "39.6275133"^^xsd:float ;
+    geo:long "22.3811964"^^xsd:float .
+
+<https://ds.uth.gr#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Larissa>
+    rdf:type uni:City ;
+    rdfs:label 'Larissa'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Thessaly> .
+
+<http://dbpedia.org/resource/Thessaly>
+    rdf:type uni:Region ;
+    rdfs:label 'Thessaly'@en .
+
+# ROW 19
+<https://ionio.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Ιονίου'@el ;
+    rdfs:label 'Ionian University'@en ;
+    uni:hasSchool <https://ionio.gr/gr/studies/faculties/isi/> .
+
+<https://ionio.gr/gr/studies/faculties/isi/>
+    rdf:type uni:School ;
+    rdfs:label 'Σχολή Επιστήμης της Πληροφορίας & Πληροφορικής'@el ;
+    rdfs:label 'Faculty of Information Science and Informatics'@en ;
+    uni:hasDepartment <https://di.ionio.gr/> .
+
+<https://di.ionio.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "19"^^xsd:integer ;
+    rdfs:label 'ΠΛΗΡΟΦΟΡΙΚΗΣ (ΚΕΡΚΥΡΑ)'@el ;
+    rdfs:label 'Informatics (Corfu)'@en ;
+    uni:hasUniversityProgram <https://di.ionio.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Corfu> ;
+    geo:lat "39.6205056"^^xsd:float ;
+    geo:long "19.9122659"^^xsd:float .
+
+<https://di.ionio.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Corfu>
+    rdf:type uni:City ;
+    rdfs:label 'Corfu'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Ionian_Islands> .
+
+<http://dbpedia.org/resource/Ionian_Islands>
+    rdf:type uni:Region ;
+    rdfs:label 'Ionian Islands'@en .
+
+# ROW 20
+<https://uoi.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Ιωαννίνων'@el ;
+    rdfs:label 'University of Ioannina'@en ;
+    uni:hasSchool <https://uoi.gr/sxoles/polytechniki-scholi/> .
+
+<https://uoi.gr/sxoles/polytechniki-scholi/>
+    rdf:type uni:School ;
+    rdfs:label 'Πολυτεχνική Σχολή'@el ;
+    rdfs:label 'School of Engineering'@en ;
+    uni:hasDepartment <https://www.cse.uoi.gr/> .
+
+<https://www.cse.uoi.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "20"^^xsd:integer ;
+    rdfs:label 'ΜΗΧΑΝΙΚΩΝ ΗΛΕΚΤΡΟΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ ΚΑΙ ΠΛΗΡΟΦΟΡΙΚΗΣ (ΙΩΑΝΝΙΝΩΝ)'@el ;
+    rdfs:label 'Computer Engineering and Informatics (Ioannina)'@en ;
+    uni:hasUniversityProgram <https://www.cse.uoi.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Ioannina> ;
+    geo:lat "39.6179552"^^xsd:float ;
+    geo:long "20.7563741"^^xsd:float .
+
+<https://www.cse.uoi.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "5"^^xsd:integer .
+
+<http://dbpedia.org/resource/Ioannina>
+    rdf:type uni:City ;
+    rdfs:label 'Ioannina'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Epirus> .
+
+<http://dbpedia.org/resource/Epirus>
+    rdf:type uni:Region ;
+    rdfs:label 'Epirus'@en .
+
+# ROW 21
+<https://uoi.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Ιωαννίνων'@el ;
+    rdfs:label 'University of Ioannina'@en ;
+    uni:hasSchool <https://uoi.gr/sxoles/scholi-pliroforikis-kai-tilepikoinonion/> .
+
+<https://uoi.gr/sxoles/scholi-pliroforikis-kai-tilepikoinonion/>
+    rdf:type uni:School ;
+    rdfs:label 'Σχολή Πληροφορικής και Τηλεπικοινωνιών'@el ;
+    rdfs:label 'Faculty of Informatics and Telecommunications'@en ;
+    uni:hasDepartment <https://www.dit.uoi.gr/> .
+
+<https://www.dit.uoi.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "21"^^xsd:integer ;
+    rdfs:label 'ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ (ΑΡΤΑ)'@el ;
+    rdfs:label 'Informatics and Telecommunications (Arta)'@en ;
+    uni:hasUniversityProgram <https://www.dit.uoi.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Arta> ;
+    geo:lat "39.1202799"^^xsd:float ;
+    geo:long "20.9410233"^^xsd:float .
+
+<https://www.dit.uoi.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Arta>
+    rdf:type uni:City ;
+    rdfs:label 'Arta'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Epirus> .
+
+<http://dbpedia.org/resource/Epirus>
+    rdf:type uni:Region ;
+    rdfs:label 'Epirus'@en .
+
+# ROW 22
+<https://www.uoc.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Κρήτης'@el ;
+    rdfs:label 'University of Crete'@en ;
+    uni:hasSchool <https://www.sse.uoc.gr/> .
+
+<https://www.sse.uoc.gr/>
+    rdf:type uni:School ;
+    rdfs:label 'Σχολή Θετικών και Τεχνολογικών Επιστημών'@el ;
+    rdfs:label 'School of Sciences and Engineering'@en ;
+    uni:hasDepartment <http://www.csd.uoc.gr/> .
+
+<http://www.csd.uoc.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "22"^^xsd:integer ;
+    rdfs:label 'ΕΠΙΣΤΗΜΗΣ ΥΠΟΛΟΓΙΣΤΩΝ (ΗΡΑΚΛΕΙΟ)'@el ;
+    rdfs:label 'Computer Science (Heraklion)'@en ;
+    uni:hasUniversityProgram <http://www.csd.uoc.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Heraklion> ;
+    geo:lat "35.3141599"^^xsd:float ;
+    geo:long "25.0807825"^^xsd:float .
+
+<http://www.csd.uoc.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Heraklion>
+    rdf:type uni:City ;
+    rdfs:label 'Heraklion'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Crete> .
+
+<http://dbpedia.org/resource/Crete>
+    rdf:type uni:Region ;
+    rdfs:label 'Crete'@en .
+
+# ROW 23
+<https://www.uom.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Μακεδονίας'@el ;
+    rdfs:label 'University of Macedonia'@en ;
+    uni:hasSchool <https://www.uom.gr/sis> .
+
+<https://www.uom.gr/sis>
+    rdf:type uni:School ;
+    rdfs:label 'Σχολή Επιστημών Πληροφορίας'@el ;
+    rdfs:label 'School of Information Sciences'@en ;
+    uni:hasDepartment <https://www.uom.gr/dai> .
+
+<https://www.uom.gr/dai>
+    rdf:type uni:Department ;
+    uni:sourceID "23"^^xsd:integer ;
+    rdfs:label 'ΕΦΑΡΜΟΣΜΕΝΗΣ ΠΛΗΡΟΦΟΡΙΚΗΣ'@el ;
+    rdfs:label 'Applied Informatics'@en ;
+    uni:hasUniversityProgram <https://www.uom.gr/dai#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Thessaloniki> ;
+    geo:lat "40.6250169"^^xsd:float ;
+    geo:long "22.9575336"^^xsd:float .
+
+<https://www.uom.gr/dai#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Thessaloniki>
+    rdf:type uni:City ;
+    rdfs:label 'Thessaloniki'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Central_Macedonia> .
+
+<http://dbpedia.org/resource/Central_Macedonia>
+    rdf:type uni:Region ;
+    rdfs:label 'Central Macedonia'@en .
+
+# ROW 24
+<https://www.upatras.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Πατρών'@el ;
+    rdfs:label 'University of Patras'@en ;
+    uni:hasSchool <https://www.upatras.gr/education/undergraduate-studies/school-of-engineering/> .
+
+<https://www.upatras.gr/education/undergraduate-studies/school-of-engineering/>
+    rdf:type uni:School ;
+    rdfs:label 'Πολυτεχνική Σχολή'@el ;
+    rdfs:label 'School of Engineering'@en ;
+    uni:hasDepartment <https://www.ceid.upatras.gr/> .
+
+<https://www.ceid.upatras.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "24"^^xsd:integer ;
+    rdfs:label 'ΜΗΧΑΝΙΚΩΝ ΗΛΕΚΤΡΟΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ ΚΑΙ ΠΛΗΡΟΦΟΡΙΚΗΣ (ΠΑΤΡΑ)'@el ;
+    rdfs:label 'Computer Engineering and Informatics (Patras)'@en ;
+    uni:hasUniversityProgram <https://www.ceid.upatras.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Patras> ;
+    geo:lat "38.2901968"^^xsd:float ;
+    geo:long "21.7931073"^^xsd:float .
+
+<https://www.ceid.upatras.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "5"^^xsd:integer .
+
+<http://dbpedia.org/resource/Patras>
+    rdf:type uni:City ;
+    rdfs:label 'Patra'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/West_Greece> .
+
+<http://dbpedia.org/resource/West_Greece>
+    rdf:type uni:Region ;
+    rdfs:label 'Western Greece'@en .
+
+# ROW 25
+<https://www.upatras.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Πατρών'@el ;
+    rdfs:label 'University of Patras'@en ;
+    uni:hasSchool <https://www.upatras.gr/education/undergraduate-studies/school-of-engineering/> .
+
+<https://www.upatras.gr/education/undergraduate-studies/school-of-engineering/>
+    rdf:type uni:School ;
+    rdfs:label 'Πολυτεχνική Σχολή'@el ;
+    rdfs:label 'School of Engineering'@en ;
+    uni:hasDepartment <http://www.ece.upatras.gr/> .
+
+<http://www.ece.upatras.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "25"^^xsd:integer ;
+    rdfs:label 'ΗΛΕΚΤΡΟΛΟΓΩΝ ΜΗΧΑΝΙΚΩΝ ΚΑΙ ΤΕΧΝΟΛΟΓΙΑΣ ΥΠΟΛΟΓΙΣΤΩΝ (ΠΑΤΡΑ)'@el ;
+    rdfs:label 'Electrical Engineering and Computer Technology (Patras)'@en ;
+    uni:hasUniversityProgram <http://www.ece.upatras.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Patras> ;
+    geo:lat "38.2883655"^^xsd:float ;
+    geo:long "21.7860528"^^xsd:float .
+
+<http://www.ece.upatras.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "5"^^xsd:integer .
+
+<http://dbpedia.org/resource/Patras>
+    rdf:type uni:City ;
+    rdfs:label 'Patra'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/West_Greece> .
+
+<http://dbpedia.org/resource/West_Greece>
+    rdf:type uni:Region ;
+    rdfs:label 'Western Greece'@en .
+
+# ROW 26
+<https://unipi.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Πειραιώς'@el ;
+    rdfs:label 'University of Piraeus'@en ;
+    uni:hasSchool <https://www.unipi.gr/sxoli-texnologion-pliroforikis-kai-epikoinonion/> .
+
+<https://www.unipi.gr/sxoli-texnologion-pliroforikis-kai-epikoinonion/>
+    rdf:type uni:School ;
+    rdfs:label 'Σχολή Τεχνολογιών Πληροφορικής και Επικοινωνιών'@el ;
+    rdfs:label 'School of Information and Communication Technologies'@en ;
+    uni:hasDepartment <http://www.cs.unipi.gr/> .
+
+<http://www.cs.unipi.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "26"^^xsd:integer ;
+    rdfs:label 'ΠΛΗΡΟΦΟΡΙΚΗΣ (ΠΕΙΡΑΙΑΣ)'@el ;
+    rdfs:label 'Informatics (Piraeus)'@en ;
+    uni:hasUniversityProgram <http://www.cs.unipi.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Piraeus> ;
+    geo:lat "37.9487185"^^xsd:float ;
+    geo:long "23.6319106"^^xsd:float .
+
+<http://www.cs.unipi.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Piraeus>
+    rdf:type uni:City ;
+    rdfs:label 'Piraeus'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Attica> .
+
+<http://dbpedia.org/resource/Attica>
+    rdf:type uni:Region ;
+    rdfs:label 'Attica'@en .
+
+# ROW 27
+<https://unipi.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Πειραιώς'@el ;
+    rdfs:label 'University of Piraeus'@en ;
+    uni:hasSchool <https://www.unipi.gr/sxoli-texnologion-pliroforikis-kai-epikoinonion/> .
+
+<https://www.unipi.gr/sxoli-texnologion-pliroforikis-kai-epikoinonion/>
+    rdf:type uni:School ;
+    rdfs:label 'Σχολή Τεχνολογιών Πληροφορικής και Επικοινωνιών'@el ;
+    rdfs:label 'School of Information and Communication Technologies'@en ;
+    uni:hasDepartment <https://www.ds.unipi.gr/> .
+
+<https://www.ds.unipi.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "27"^^xsd:integer ;
+    rdfs:label 'ΨΗΦΙΑΚΩΝ ΣΥΣΤΗΜΑΤΩΝ (ΠΕΙΡΑΙΑΣ)'@el ;
+    rdfs:label 'Digital Systems (Piraeus)'@en ;
+    uni:hasUniversityProgram <https://www.ds.unipi.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Piraeus> ;
+    geo:lat "37.9487826"^^xsd:float ;
+    geo:long "23.6319106"^^xsd:float .
+
+<https://www.ds.unipi.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Piraeus>
+    rdf:type uni:City ;
+    rdfs:label 'Piraeus'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Attica> .
+
+<http://dbpedia.org/resource/Attica>
+    rdf:type uni:Region ;
+    rdfs:label 'Attica'@en .
+
+# ROW 28
+<https://www.uop.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Πελοποννήσου'@el ;
+    rdfs:label 'University of the Peloponnese'@en ;
+    uni:hasSchool <https://www.uop.gr/sholi-oikonomias-kai-tehnologias> .
+
+<https://www.uop.gr/sholi-oikonomias-kai-tehnologias>
+    rdf:type uni:School ;
+    rdfs:label 'Σχολή Οικονομίας και Τεχνολογίας'@el ;
+    rdfs:label 'School of Economy and Technology'@en ;
+    uni:hasDepartment <http://dit.uop.gr/> .
+
+<http://dit.uop.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "28"^^xsd:integer ;
+    rdfs:label 'ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΩΝ (ΤΡΙΠΟΛΗ)'@el ;
+    rdfs:label 'Informatics and Telecommunications (Tripoli)'@en ;
+    uni:hasUniversityProgram <http://dit.uop.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Tripoli> ;
+    geo:lat "37.7469404"^^xsd:float ;
+    geo:long "22.409335"^^xsd:float .
+
+<http://dit.uop.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Tripoli>
+    rdf:type uni:City ;
+    rdfs:label 'Tripoli'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Peloponnese> .
+
+<http://dbpedia.org/resource/Peloponnese>
+    rdf:type uni:Region ;
+    rdfs:label 'Peloponnese'@en .
+
+# ROW 29
+<https://www.uop.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Πελοποννήσου'@el ;
+    rdfs:label 'University of the Peloponnese'@en ;
+    uni:hasSchool <https://www.uop.gr/polytechnic_school> .
+
+<https://www.uop.gr/polytechnic_school>
+    rdf:type uni:School ;
+    rdfs:label 'Πολυτεχνική Σχολή'@el ;
+    rdfs:label 'School of Engineering'@en ;
+    uni:hasDepartment <https://www.ece.uop.gr/> .
+
+<https://www.ece.uop.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "29"^^xsd:integer ;
+    rdfs:label 'ΗΛΕΚΤΡΟΛΟΓΩΝ ΜΗΧΑΝΙΚΩΝ ΚΑΙ ΜΗΧΑΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ (ΠΑΤΡΑ)'@el ;
+    rdfs:label 'Electrical and Computer Engineering (Patras)'@en ;
+    uni:hasUniversityProgram <https://www.ece.uop.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Patras> ;
+    geo:lat "38.2186828"^^xsd:float ;
+    geo:long "21.7462468"^^xsd:float .
+
+<https://www.ece.uop.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "5"^^xsd:integer .
+
+<http://dbpedia.org/resource/Patras>
+    rdf:type uni:City ;
+    rdfs:label 'Patra'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/West_Greece> .
+
+<http://dbpedia.org/resource/West_Greece>
+    rdf:type uni:Region ;
+    rdfs:label 'Western Greece'@en .
+
+# ROW 30
+<https://www.uop.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πανεπιστήμιο Πελοποννήσου'@el ;
+    rdfs:label 'University of the Peloponnese'@en ;
+    uni:hasSchool <https://www.uop.gr/sholi-oikonomias-kai-tehnologias> .
+
+<https://www.uop.gr/sholi-oikonomias-kai-tehnologias>
+    rdf:type uni:School ;
+    rdfs:label 'Σχολή Οικονομίας και Τεχνολογίας'@el ;
+    rdfs:label 'School of Economy and Technology'@en ;
+    uni:hasDepartment <https://ds.uop.gr/en> .
+
+<https://ds.uop.gr/en>
+    rdf:type uni:Department ;
+    uni:sourceID "30"^^xsd:integer ;
+    rdfs:label 'ΨΗΦΙΑΚΩΝ ΣΥΣΤΗΜΑΤΩΝ (ΣΠΑΡΤΗ)'@el ;
+    rdfs:label 'Digital Systems (Sparti)'@en ;
+    uni:hasUniversityProgram <https://ds.uop.gr/en#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Sparti> ;
+    geo:lat "37.1209579"^^xsd:float ;
+    geo:long "22.4285114"^^xsd:float .
+
+<https://ds.uop.gr/en#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Sparti>
+    rdf:type uni:City ;
+    rdfs:label 'Sparti'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Peloponnese> .
+
+<http://dbpedia.org/resource/Peloponnese>
+    rdf:type uni:Region ;
+    rdfs:label 'Peloponnese'@en .
+
+# ROW 31
+<http://tuc.gr/>
+    rdf:type uni:University ;
+    rdfs:label 'Πολυτεχνείο Κρήτης'@el ;
+    rdfs:label 'Technical University of Crete'@en ;
+    uni:hasSchool <https://www.tuc.gr/el/scholes> .
+
+<https://www.tuc.gr/el/scholes>
+    rdf:type uni:School ;
+    rdfs:label 'Πολυτεχνική Σχολή'@el ;
+    rdfs:label 'School of Engineering'@en ;
+    uni:hasDepartment <http://www.ece.tuc.gr/> .
+
+<http://www.ece.tuc.gr/>
+    rdf:type uni:Department ;
+    uni:sourceID "31"^^xsd:integer ;
+    rdfs:label 'ΗΛΕΚΤΡΟΛΟΓΩΝ ΜΗΧΑΝΙΚΩΝ ΚΑΙ ΜΗΧΑΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ (ΧΑΝΙΑ)'@el ;
+    rdfs:label 'Electrical and Computer Engineering (Chania)'@en ;
+    uni:hasUniversityProgram <http://www.ece.tuc.gr/#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Chania> ;
+    geo:lat "35.5312745"^^xsd:float ;
+    geo:long "24.0631056"^^xsd:float .
+
+<http://www.ece.tuc.gr/#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "5"^^xsd:integer .
+
+<http://dbpedia.org/resource/Chania>
+    rdf:type uni:City ;
+    rdfs:label 'Chania'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Crete> .
+
+<http://dbpedia.org/resource/Crete>
+    rdf:type uni:Region ;
+    rdfs:label 'Crete'@en .
+
+# ROW 32
+<https://www.hua.gr>
+    rdf:type uni:University ;
+    rdfs:label 'ΧΑΡΟΚΟΠΕΙΟ ΠΑΝΕΠΙΣΤΗΜΙΟ'@el ;
+    rdfs:label 'Harokopio University'@en ;
+    uni:hasSchool <https://www.hua.gr#scholes> .
+
+<https://www.hua.gr#scholes>
+    rdf:type uni:School ;
+    rdfs:label 'Πληροφορικής και Τηλεματικής'@el ;
+    rdfs:label 'School of Informatics and Telematics'@en ;
+    uni:hasDepartment <http://www.dit.hua.gr> .
+
+<http://www.dit.hua.gr>
+    rdf:type uni:Department ;
+    uni:sourceID "32"^^xsd:integer ;
+    rdfs:label 'ΠΛΗΡΟΦΟΡΙΚΗΣ ΚΑΙ ΤΗΛΕΜΑΤΙΚΗΣ (ΑΘΗΝΑ)'@el ;
+    rdfs:label 'Informatics and Telematics (Athens)'@en ;
+    uni:hasUniversityProgram <http://www.dit.hua.gr#BSc> ;
+    uni:hasCity <http://dbpedia.org/resource/Athens> ;
+    geo:lat "37.9622544"^^xsd:float ;
+    geo:long "23.6983322"^^xsd:float .
+
+<http://www.dit.hua.gr#BSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:BSc ;
+    uni:officialStudyDurationYears "4"^^xsd:integer .
+
+<http://dbpedia.org/resource/Athens>
+    rdf:type uni:City ;
+    rdfs:label 'Athens'@en ;
+    uni:hasRegion <http://dbpedia.org/resource/Attica> .
+
+<http://dbpedia.org/resource/Attica>
+    rdf:type uni:Region ;
+    rdfs:label 'Attica'@en .
+
+<http://www.csd.auth.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<http://www.csd.auth.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://www.auth.gr/en/school/ee-en/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://www.auth.gr/en/school/ee-en/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://www.iee.ihu.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://www.iee.ihu.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://www.ict.ihu.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://www.ict.ihu.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://www.cs.duth.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://www.cs.duth.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://www.ee.duth.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://www.ee.duth.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<http://www.di.uoa.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<http://www.di.uoa.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://www.ece.ntua.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://www.ece.ntua.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://ece.hmu.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://ece.hmu.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<http://www.cs.aueb.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<http://www.cs.aueb.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://www.icsd.aegean.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://www.icsd.aegean.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/ice/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/ice/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://ece.uowm.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://ece.uowm.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://cs.uowm.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://cs.uowm.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://www.e-ce.uth.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://www.e-ce.uth.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<http://www.dib.uth.gr#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<http://www.dib.uth.gr#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://dit.uth.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://dit.uth.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://ds.uth.gr#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://ds.uth.gr#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://di.ionio.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://di.ionio.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://www.cse.uoi.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://www.cse.uoi.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://www.dit.uoi.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://www.dit.uoi.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<http://www.csd.uoc.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<http://www.csd.uoc.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://www.uom.gr/dai#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://www.uom.gr/dai#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://www.ceid.upatras.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://www.ceid.upatras.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<http://www.ece.upatras.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<http://www.ece.upatras.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<http://www.cs.unipi.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<http://www.cs.unipi.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://www.ds.unipi.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://www.ds.unipi.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<http://dit.uop.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<http://dit.uop.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://www.ece.uop.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://www.ece.uop.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<https://ds.uop.gr/en#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<https://ds.uop.gr/en#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<http://www.ece.tuc.gr/#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<http://www.ece.tuc.gr/#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<http://www.dit.hua.gr#MSc>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:MSc .
+
+<http://www.dit.hua.gr#PhD>
+    rdf:type uni:UniversityProgram ;
+    uni:hasUniversityProgramType unires:PhD .
+
+<http://www.csd.auth.gr/> uni:hasUniversityProgram <http://www.csd.auth.gr/#MSc> .
+<http://www.csd.auth.gr/> uni:hasUniversityProgram <http://www.csd.auth.gr/#PhD> .
+
+<https://www.auth.gr/en/school/ee-en/> uni:hasUniversityProgram <https://www.auth.gr/en/school/ee-en/#MSc> .
+<https://www.auth.gr/en/school/ee-en/> uni:hasUniversityProgram <https://www.auth.gr/en/school/ee-en/#PhD> .
+
+<https://www.iee.ihu.gr/> uni:hasUniversityProgram <https://www.iee.ihu.gr/#MSc> .
+<https://www.iee.ihu.gr/> uni:hasUniversityProgram <https://www.iee.ihu.gr/#PhD> .
+
+<https://www.ict.ihu.gr/> uni:hasUniversityProgram <https://www.ict.ihu.gr/#MSc> .
+<https://www.ict.ihu.gr/> uni:hasUniversityProgram <https://www.ict.ihu.gr/#PhD> .
+
+<https://www.cs.duth.gr/> uni:hasUniversityProgram <https://www.cs.duth.gr/#MSc> .
+<https://www.cs.duth.gr/> uni:hasUniversityProgram <https://www.cs.duth.gr/#PhD> .
+
+<https://www.ee.duth.gr/> uni:hasUniversityProgram <https://www.ee.duth.gr/#MSc> .
+<https://www.ee.duth.gr/> uni:hasUniversityProgram <https://www.ee.duth.gr/#PhD> .
+
+<http://www.di.uoa.gr/> uni:hasUniversityProgram <http://www.di.uoa.gr/#MSc> .
+<http://www.di.uoa.gr/> uni:hasUniversityProgram <http://www.di.uoa.gr/#PhD> .
+
+<https://www.ece.ntua.gr/> uni:hasUniversityProgram <https://www.ece.ntua.gr/#MSc> .
+<https://www.ece.ntua.gr/> uni:hasUniversityProgram <https://www.ece.ntua.gr/#PhD> .
+
+<https://ece.hmu.gr/> uni:hasUniversityProgram <https://ece.hmu.gr/#MSc> .
+<https://ece.hmu.gr/> uni:hasUniversityProgram <https://ece.hmu.gr/#PhD> .
+
+<http://www.cs.aueb.gr/> uni:hasUniversityProgram <http://www.cs.aueb.gr/#MSc> .
+<http://www.cs.aueb.gr/> uni:hasUniversityProgram <http://www.cs.aueb.gr/#PhD> .
+
+<https://www.icsd.aegean.gr/> uni:hasUniversityProgram <https://www.icsd.aegean.gr/#MSc> .
+<https://www.icsd.aegean.gr/> uni:hasUniversityProgram <https://www.icsd.aegean.gr/#PhD> .
+
+<https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/ice/> uni:hasUniversityProgram <https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/ice/#MSc> .
+<https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/ice/> uni:hasUniversityProgram <https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/ice/#PhD> .
+
+<https://ece.uowm.gr/> uni:hasUniversityProgram <https://ece.uowm.gr/#MSc> .
+<https://ece.uowm.gr/> uni:hasUniversityProgram <https://ece.uowm.gr/#PhD> .
+
+<https://cs.uowm.gr/> uni:hasUniversityProgram <https://cs.uowm.gr/#MSc> .
+<https://cs.uowm.gr/> uni:hasUniversityProgram <https://cs.uowm.gr/#PhD> .
+
+<https://www.e-ce.uth.gr/> uni:hasUniversityProgram <https://www.e-ce.uth.gr/#MSc> .
+<https://www.e-ce.uth.gr/> uni:hasUniversityProgram <https://www.e-ce.uth.gr/#PhD> .
+
+<http://www.dib.uth.gr> uni:hasUniversityProgram <http://www.dib.uth.gr#MSc> .
+<http://www.dib.uth.gr> uni:hasUniversityProgram <http://www.dib.uth.gr#PhD> .
+
+<https://dit.uth.gr/> uni:hasUniversityProgram <https://dit.uth.gr/#MSc> .
+<https://dit.uth.gr/> uni:hasUniversityProgram <https://dit.uth.gr/#PhD> .
+
+<https://ds.uth.gr> uni:hasUniversityProgram <https://ds.uth.gr#MSc> .
+<https://ds.uth.gr> uni:hasUniversityProgram <https://ds.uth.gr#PhD> .
+
+<https://di.ionio.gr/> uni:hasUniversityProgram <https://di.ionio.gr/#MSc> .
+<https://di.ionio.gr/> uni:hasUniversityProgram <https://di.ionio.gr/#PhD> .
+
+<https://www.cse.uoi.gr/> uni:hasUniversityProgram <https://www.cse.uoi.gr/#MSc> .
+<https://www.cse.uoi.gr/> uni:hasUniversityProgram <https://www.cse.uoi.gr/#PhD> .
+
+<https://www.dit.uoi.gr/> uni:hasUniversityProgram <https://www.dit.uoi.gr/#MSc> .
+<https://www.dit.uoi.gr/> uni:hasUniversityProgram <https://www.dit.uoi.gr/#PhD> .
+
+<http://www.csd.uoc.gr/> uni:hasUniversityProgram <http://www.csd.uoc.gr/#MSc> .
+<http://www.csd.uoc.gr/> uni:hasUniversityProgram <http://www.csd.uoc.gr/#PhD> .
+
+<https://www.uom.gr/dai> uni:hasUniversityProgram <https://www.uom.gr/dai#MSc> .
+<https://www.uom.gr/dai> uni:hasUniversityProgram <https://www.uom.gr/dai#PhD> .
+
+<https://www.ceid.upatras.gr/> uni:hasUniversityProgram <https://www.ceid.upatras.gr/#MSc> .
+<https://www.ceid.upatras.gr/> uni:hasUniversityProgram <https://www.ceid.upatras.gr/#PhD> .
+
+<http://www.ece.upatras.gr/> uni:hasUniversityProgram <http://www.ece.upatras.gr/#MSc> .
+<http://www.ece.upatras.gr/> uni:hasUniversityProgram <http://www.ece.upatras.gr/#PhD> .
+
+<http://www.cs.unipi.gr/> uni:hasUniversityProgram <http://www.cs.unipi.gr/#MSc> .
+<http://www.cs.unipi.gr/> uni:hasUniversityProgram <http://www.cs.unipi.gr/#PhD> .
+
+<https://www.ds.unipi.gr/> uni:hasUniversityProgram <https://www.ds.unipi.gr/#MSc> .
+<https://www.ds.unipi.gr/> uni:hasUniversityProgram <https://www.ds.unipi.gr/#PhD> .
+
+<http://dit.uop.gr/> uni:hasUniversityProgram <http://dit.uop.gr/#MSc> .
+<http://dit.uop.gr/> uni:hasUniversityProgram <http://dit.uop.gr/#PhD> .
+
+<https://www.ece.uop.gr/> uni:hasUniversityProgram <https://www.ece.uop.gr/#MSc> .
+<https://www.ece.uop.gr/> uni:hasUniversityProgram <https://www.ece.uop.gr/#PhD> .
+
+<https://ds.uop.gr/en> uni:hasUniversityProgram <https://ds.uop.gr/en#MSc> .
+<https://ds.uop.gr/en> uni:hasUniversityProgram <https://ds.uop.gr/en#PhD> .
+
+<http://www.ece.tuc.gr/> uni:hasUniversityProgram <http://www.ece.tuc.gr/#MSc> .
+<http://www.ece.tuc.gr/> uni:hasUniversityProgram <http://www.ece.tuc.gr/#PhD> .
+
+<http://www.dit.hua.gr> uni:hasUniversityProgram <http://www.dit.hua.gr#MSc> .
+<http://www.dit.hua.gr> uni:hasUniversityProgram <http://www.dit.hua.gr#PhD> .

@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore Greek university statistics with interactive charts, institutional comparisons and verified SPARQL queries."
+    />
+    <meta name="theme-color" content="#101617" />
+    <title>UniStats — University data explorer</title>
+    <script src="/assets/js/theme.js"></script>
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/vendor/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="/assets/vendor/leaflet/MarkerCluster.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/theme.css" />
+    <script src="/assets/vendor/chart.umd.js" defer></script>
+    <script src="/assets/vendor/leaflet/leaflet.js" defer></script>
+    <script
+      src="/assets/vendor/leaflet/Leaflet.VectorGrid.bundled.min.js"
+      defer
+    ></script>
+    <script
+      src="/assets/vendor/leaflet/leaflet.markercluster.js"
+      defer
+    ></script>
+    <script type="module" src="/assets/js/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to results</a>
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="/" aria-label="UniStats home"
+        ><img src="/assets/favicon.svg" width="34" height="34" alt="" /><span
+          >UniStats</span
+        ></a
+      >
+      <nav class="nav-list" id="navigation">
+        <button
+          class="nav-item active"
+          data-view="students"
+          aria-current="page"
+        >
+          Undergraduates
+        </button>
+        <button class="nav-item" data-view="postgraduates">
+          Postgraduates
+        </button>
+        <button class="nav-item" data-view="graduates">Graduates</button>
+        <button class="nav-item" data-view="staff">Teaching staff</button>
+        <button class="nav-item" data-view="entry">Student entry</button>
+        <button class="nav-item" data-view="map">Campus map</button>
+        <div class="nav-divider"></div>
+        <button class="nav-item" data-view="catalogue">
+          Query catalogue<span class="count-badge">41</span>
+        </button>
+        <button class="nav-item" data-view="ai">
+          Ask UniStats<span class="count-badge">AI</span>
+        </button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="text-button" id="guide-button">About the data</button>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <main id="main" tabindex="-1">
+        <section class="page-heading">
+          <h1 id="page-title">Undergraduates</h1>
+          <div class="heading-actions">
+            <button class="button secondary" id="theme-toggle" type="button">
+              Light mode
+            </button>
+            <button class="button secondary" id="refresh-data" type="button">
+              Refresh data
+            </button>
+            <div class="connection">
+              <span
+                class="source-pill"
+                id="source-pill"
+                role="status"
+                aria-live="polite"
+                >Loading data</span
+              ><label class="sr-only" for="source-select">Data source</label
+              ><select id="source-select" class="source-select">
+                <option value="auto">Auto connection</option>
+                <option value="live">Live database</option>
+                <option value="snapshot">Local snapshot</option>
+              </select>
+            </div>
+            <button class="button secondary" id="reset-button">
+              Reset filters
+            </button>
+          </div>
+        </section>
+        <div id="error-banner" class="message error" role="alert" hidden>
+          <span id="error-message"></span
+          ><button class="button compact" id="retry-button">Try again</button>
+        </div>
+        <div
+          id="source-message"
+          class="source-message"
+          role="status"
+          hidden
+        ></div>
+
+        <section id="explorer-view" aria-label="Data explorer">
+          <form class="filters" id="filter-form">
+            <label
+              >Academic year<select id="year-filter">
+                <option>Loading…</option>
+              </select></label
+            >
+            <label
+              >University<select id="university-filter">
+                <option value="">All universities</option>
+              </select></label
+            >
+            <label
+              >Department<select id="department-filter">
+                <option value="">All departments</option>
+              </select></label
+            >
+            <label
+              >Region<select id="region-filter">
+                <option value="">All regions</option>
+              </select></label
+            >
+            <label
+              >Gender<select id="gender-filter">
+                <option value="">All genders</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+              </select></label
+            >
+            <label id="level-control" hidden
+              >Study level<select id="level-filter">
+                <option value="">MSc &amp; PhD</option>
+                <option value="MSc">MSc</option>
+                <option value="PhD">PhD</option>
+              </select></label
+            >
+            <label id="staff-control" hidden
+              >Staff population<select id="staff-filter">
+                <option value="staff">Internal staff</option>
+                <option value="external">External staff</option>
+              </select></label
+            >
+            <label id="staff_group-control" hidden
+              >Broad staff category<select id="staff_group-filter">
+                <option value="">All staff groups</option>
+              </select></label
+            >
+            <label id="category-control"
+              >Study year<select id="category-filter">
+                <option value="">All study years</option>
+              </select></label
+            >
+            <label id="category-detail-control" hidden
+              >Staff chart<select id="category-detail-filter">
+                <option value="broad">Broad categories</option>
+                <option value="specific">Specific categories</option>
+              </select></label
+            >
+            <label id="birth_year-control" hidden
+              >Birth year / group<select id="birth_year-filter">
+                <option value="">All birth years</option>
+              </select></label
+            >
+          </form>
+          <div
+            class="active-filters"
+            id="active-filters"
+            aria-live="polite"
+          ></div>
+          <div class="loading-line" id="loading-line" aria-hidden="true"></div>
+          <div id="explorer-results" hidden>
+            <div class="metrics" id="metrics" aria-live="polite">
+              <article class="metric">
+                <span id="population-label">Enrolled students</span
+                ><strong id="stat-total">—</strong
+                ><small id="stat-total-note"
+                  >Across the selected population</small
+                >
+              </article>
+              <article class="metric">
+                <span>Female representation</span
+                ><strong id="stat-female">—</strong
+                ><small id="stat-female-note">Share of observed students</small>
+              </article>
+              <article class="metric">
+                <span id="third-label">Beyond normal duration</span
+                ><strong id="stat-third">—</strong
+                ><small id="stat-third-note">N+ share of enrollment</small>
+              </article>
+              <article class="metric">
+                <span>Departments represented</span
+                ><strong id="stat-departments">—</strong
+                ><small id="stat-department-note"
+                  >With matching observations</small
+                >
+              </article>
+            </div>
+
+            <section
+              class="panel ranking-panel"
+              aria-labelledby="ranking-title"
+            >
+              <div class="panel-heading">
+                <div>
+                  <h2 id="ranking-title">Where students study</h2>
+                </div>
+                <div class="chart-actions">
+                  <button id="download-chart" class="text-button">
+                    Save chart
+                  </button>
+                  <div
+                    class="segmented"
+                    role="group"
+                    aria-label="Main result display"
+                  >
+                    <button
+                      class="selected"
+                      data-display="chart"
+                      aria-pressed="true"
+                    >
+                      Chart</button
+                    ><button data-display="table" aria-pressed="false">
+                      Table
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="chart-toolbar">
+                <label
+                  >Measure<select id="metric-filter">
+                    <option value="total">Population</option>
+                  </select></label
+                ><label
+                  >Compare by<select id="group-filter">
+                    <option value="department">Department</option>
+                    <option value="university">University</option>
+                    <option value="region">Region</option>
+                    <option value="city">City</option>
+                  </select></label
+                ><label class="range-control" for="top-filter"
+                  >Show <output id="top-output">10</output> groups<input
+                    id="top-filter"
+                    type="range"
+                    min="3"
+                    max="32"
+                    step="1"
+                    value="10"
+                /></label>
+              </div>
+              <div class="chart-empty" id="empty-state" hidden>
+                <strong>No observations match these filters.</strong>
+                <p>
+                  Try another year or broaden your selection. Missing
+                  observations are not treated as zero.
+                </p>
+              </div>
+              <div id="ranking-chart-view">
+                <div class="chart-frame ranking-frame">
+                  <canvas
+                    id="ranking-chart"
+                    role="img"
+                    aria-label="Institution comparison chart. Equivalent values are available in the Table view."
+                  ></canvas>
+                </div>
+                <p class="chart-hint" id="chart-hint">
+                  Select a bar to explore that department. Hover for the full
+                  name and value.
+                </p>
+              </div>
+              <div class="table-area" id="ranking-table-view" hidden>
+                <div class="table-toolbar">
+                  <label class="search-label"
+                    ><span class="sr-only">Search result rows</span
+                    ><input
+                      id="table-search"
+                      type="search"
+                      placeholder="Search these results…" /></label
+                  ><button class="button secondary compact" id="export-csv">
+                    Export CSV
+                  </button>
+                </div>
+                <div class="table-scroll">
+                  <table id="results-table">
+                    <caption class="sr-only">
+                      Comparison results for the current filters
+                    </caption>
+                    <thead></thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+                <div class="pagination">
+                  <span id="row-count"></span>
+                  <div>
+                    <button id="previous-page" class="button secondary compact">
+                      Previous</button
+                    ><span id="page-count"></span
+                    ><button id="next-page" class="button secondary compact">
+                      Next
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="year-timeline">
+                <div>
+                  <span class="eyebrow">ACADEMIC YEAR</span
+                  ><strong id="timeline-year">—</strong>
+                </div>
+                <label class="sr-only" for="year-slider"
+                  >Selected academic year</label
+                ><input
+                  id="year-slider"
+                  type="range"
+                  min="0"
+                  max="6"
+                  value="6"
+                  step="1"
+                /><span id="timeline-range" class="timeline-caption"
+                  >Available academic years only</span
+                >
+              </div>
+            </section>
+
+            <div class="support-grid">
+              <section class="panel">
+                <div class="panel-heading">
+                  <div>
+                    <h2>Change over time</h2>
+                  </div>
+                  <span class="minor-badge" id="trend-badge">Population</span>
+                </div>
+                <div class="chart-frame trend-frame">
+                  <canvas
+                    id="trend-chart"
+                    role="img"
+                    aria-label="Trend for the selected population. Missing years appear as gaps."
+                  ></canvas>
+                </div>
+                <details class="chart-values">
+                  <summary>View trend values</summary>
+                  <div id="trend-values"></div>
+                </details>
+                <p class="chart-hint">Missing years appear as gaps.</p>
+              </section>
+              <section class="panel">
+                <div class="panel-heading">
+                  <div>
+                    <h2 id="distribution-title">By study year</h2>
+                  </div>
+                </div>
+                <div class="distribution-layout">
+                  <div class="chart-frame donut-frame">
+                    <canvas
+                      id="distribution-chart"
+                      role="img"
+                      aria-label="Population distribution. Counts are listed beside the chart."
+                    ></canvas>
+                  </div>
+                  <ul class="distribution-legend" id="distribution-legend"></ul>
+                </div>
+                <p class="chart-hint">
+                  Select a category to filter the explorer.
+                </p>
+              </section>
+            </div>
+            <section class="data-footnote">
+              <details>
+                <summary>Dataset notes</summary>
+                <p id="dataset-note"></p>
+                <p id="coverage-note">
+                  Source: ELSTAT. Coverage follows the selected database
+                  metadata.
+                </p>
+              </details>
+              <button id="view-query" class="text-button">
+                View query &amp; filters
+              </button>
+            </section>
+          </div>
+        </section>
+
+        <section id="map-view" hidden aria-label="University campus map">
+          <form class="map-filters" id="map-filters">
+            <label
+              >Find a location<input
+                type="search"
+                id="map-search"
+                placeholder="University, department or city…"
+            /></label>
+            <label
+              >University<select id="map-university">
+                <option value="">All universities</option>
+              </select></label
+            >
+            <label
+              >Region<select id="map-region">
+                <option value="">All regions</option>
+              </select></label
+            >
+            <button class="button secondary" type="button" id="map-reset">
+              Reset map
+            </button>
+          </form>
+          <div class="map-summary">
+            <p id="map-count" role="status"></p>
+            <span id="map-location-source"></span>
+          </div>
+          <div class="map-layout">
+            <div class="panel map-panel">
+              <div class="map-stage">
+                <div
+                  id="campus-map"
+                  class="campus-map"
+                  role="region"
+                  aria-label="Interactive campus map. Use plus and minus to zoom, or choose a location from the list."
+                ></div>
+                <div class="map-tools">
+                  <button
+                    type="button"
+                    id="map-labels"
+                    class="map-label-toggle"
+                    aria-pressed="false"
+                    aria-controls="campus-map"
+                  >
+                    <span aria-hidden="true">Aa</span> Place names
+                  </button>
+                  <div class="map-north" aria-label="North is up">
+                    <span>N</span>
+                    <svg
+                      width="18"
+                      height="24"
+                      viewBox="0 0 18 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M9 2 16 22 9 17 2 22Z"
+                        fill="none"
+                        stroke="currentColor"
+                      />
+                      <path d="M9 2V17L2 22Z" fill="currentColor" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="map-tile-notice"
+                id="map-tile-notice"
+                role="status"
+                hidden
+              >
+                <span
+                  >Some map tiles could not load. Campus locations and the list
+                  are still available.</span
+                ><button class="text-button" id="map-retry-tiles">Retry</button>
+              </div>
+              <div class="map-legend">
+                <span><i aria-hidden="true"></i>Department location</span
+                ><span>Numbered markers group nearby locations</span
+                ><button class="text-button" id="map-fit">Fit locations</button>
+              </div>
+            </div>
+            <aside class="panel map-directory" aria-label="Campus locations">
+              <div class="map-directory-heading">
+                <h2>Locations</h2>
+                <span id="map-directory-count"></span>
+              </div>
+              <div id="map-location-list" class="map-location-list"></div>
+            </aside>
+          </div>
+          <p class="map-footnote">
+            Each marker uses a recorded department coordinate. A university can
+            have locations in several cities.
+          </p>
+        </section>
+
+        <section id="catalogue-view" hidden aria-label="Query catalogue">
+          <div class="catalogue-layout">
+            <aside class="catalogue-list-panel">
+              <label class="search-label"
+                ><span class="sr-only">Search queries</span
+                ><input
+                  id="query-search"
+                  type="search"
+                  placeholder="Find a question or indicator…"
+              /></label>
+              <div id="query-list" class="query-list"></div>
+            </aside>
+            <div class="catalogue-workspace">
+              <section class="panel query-intro">
+                <p class="eyebrow" id="query-id"></p>
+                <h2 id="query-title"></h2>
+                <p class="query-guidance" id="query-guidance"></p>
+                <form class="query-filters" id="query-filters"></form>
+                <div class="query-run-line">
+                  <button class="button primary" id="run-query">
+                    Run query</button
+                  ><span id="query-run-status" role="status"
+                    >Choose a question to begin.</span
+                  >
+                </div>
+                <details>
+                  <summary>Inspect SPARQL</summary>
+                  <pre id="catalogue-code" class="code-block"></pre>
+                </details>
+              </section>
+              <section class="panel query-results" id="query-results" hidden>
+                <div class="panel-heading">
+                  <h2>Query results</h2>
+                  <button id="query-export" class="button secondary compact">
+                    Export CSV
+                  </button>
+                </div>
+                <div class="query-chart-controls">
+                  <label>Chart value<select id="query-value"></select></label
+                  ><label
+                    >Group label<select id="query-dimension"></select
+                  ></label>
+                </div>
+                <div class="chart-frame query-chart-frame">
+                  <canvas
+                    id="query-chart"
+                    role="img"
+                    aria-label="Catalogue result chart. Exact results appear in the table below."
+                  ></canvas>
+                </div>
+                <p class="chart-hint" id="query-chart-hint">
+                  First 20 result rows. Each bar represents one row.
+                </p>
+                <div class="table-scroll">
+                  <table id="query-table">
+                    <caption class="sr-only">
+                      Raw catalogue query results
+                    </caption>
+                    <thead></thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+                <div class="pagination">
+                  <span id="query-row-count"></span>
+                  <div>
+                    <button
+                      class="button secondary compact"
+                      id="query-previous"
+                    >
+                      Previous</button
+                    ><span id="query-page-count"></span
+                    ><button class="button secondary compact" id="query-next">
+                      Next
+                    </button>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section id="ai-view" hidden>
+          <div class="panel ai-panel">
+            <div class="ai-topline">
+              <span class="minor-badge">Ask in English · Live data</span
+              ><button class="text-button" id="ai-refresh" type="button">
+                Check setup
+              </button>
+            </div>
+            <h2>Your question. The data behind it.</h2>
+            <p>
+              Explore the available departments in plain English. Compare
+              populations, follow trends, or ask for a thesis indicator.
+            </p>
+            <form id="ai-form">
+              <label for="ai-question">What would you like to know?</label>
+              <textarea
+                id="ai-question"
+                rows="3"
+                minlength="3"
+                maxlength="2000"
+                required
+                aria-describedby="ai-help"
+                placeholder="Which 5 universities have the most undergraduate students in the latest academic year?"
+              ></textarea>
+              <div class="ai-examples" aria-label="Example questions">
+                <button
+                  type="button"
+                  data-ai-example="Which 5 universities have the most undergraduate students in the latest academic year?"
+                >
+                  Top universities
+                </button>
+                <button
+                  type="button"
+                  data-ai-example="Show the female share of undergraduate students over time."
+                >
+                  Female representation
+                </button>
+                <button
+                  type="button"
+                  data-ai-example="Compare MSc and PhD student counts in the latest academic year."
+                >
+                  MSc vs PhD
+                </button>
+                <button
+                  type="button"
+                  data-ai-example="What is the average postgraduate age in the latest academic year?"
+                >
+                  Average age
+                </button>
+              </div>
+              <label class="ai-followup" id="ai-followup-control" hidden
+                ><input type="checkbox" id="ai-followup" /> Use my previous
+                question as context</label
+              >
+              <div class="ai-actions">
+                <button
+                  class="button primary"
+                  type="submit"
+                  id="ai-submit"
+                  disabled
+                >
+                  Ask UniStats <span aria-hidden="true">↗</span></button
+                ><span id="ai-status" role="status">Checking AI setup…</span>
+              </div>
+              <p class="ai-help" id="ai-help">
+                Your question is sent to the configured AI provider. Answers use
+                fresh live data. Available years and categories are read from
+                the database.
+              </p>
+            </form>
+          </div>
+          <div
+            id="ai-message"
+            class="panel ai-message"
+            role="status"
+            hidden
+          ></div>
+          <section
+            id="ai-result"
+            class="panel ai-result"
+            aria-label="Query answer"
+            hidden
+          >
+            <div class="ai-topline">
+              <span class="minor-badge">Live database</span
+              ><span id="ai-provenance" class="muted"></span>
+            </div>
+            <h2 id="ai-answer"></h2>
+            <p id="ai-interpretation"></p>
+            <ul id="ai-assumptions"></ul>
+            <div id="ai-chart-wrap" hidden>
+              <div class="ai-chart-frame">
+                <canvas
+                  id="ai-chart"
+                  role="img"
+                  aria-label="Query results chart; exact values in the table below"
+                ></canvas>
+              </div>
+              <p class="chart-hint" id="ai-chart-hint"></p>
+            </div>
+            <div class="ai-result-toolbar">
+              <h3>Results</h3>
+              <button
+                class="button secondary small"
+                id="ai-export"
+                type="button"
+              >
+                Download CSV
+              </button>
+            </div>
+            <div class="table-scroll">
+              <table id="ai-table">
+                <caption class="sr-only">
+                  Live query results
+                </caption>
+                <thead></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <div class="ai-pagination">
+              <button class="text-button" id="ai-prev" type="button">
+                ← Previous</button
+              ><span id="ai-page"></span
+              ><button class="text-button" id="ai-next" type="button">
+                Next →
+              </button>
+            </div>
+            <p id="ai-note" class="ai-help"></p>
+            <details class="ai-query-details">
+              <summary>View the executed SPARQL</summary>
+              <button class="text-button" id="ai-copy" type="button">
+                Copy query
+              </button>
+              <pre><code id="ai-query"></code></pre>
+            </details>
+          </section>
+        </section>
+      </main>
+    </div>
+    <dialog id="guide-dialog" aria-labelledby="guide-title">
+      <div class="dialog-heading">
+        <h2 id="guide-title">About these statistics</h2>
+        <button class="close-button" data-close aria-label="Close data guide">
+          ×
+        </button>
+      </div>
+      <div class="dialog-content">
+        <p>
+          This application explores ELSTAT statistics for the departments found
+          in the selected data source. It is a thesis research tool.
+        </p>
+        <h3>What the sources mean</h3>
+        <p>
+          <strong>Live database</strong> means the API read the remote UniStats
+          graph. <strong>Local snapshot</strong> means it used copies of the
+          supplied RDF files, prepared on 8 October 2026. Auto mode falls back
+          to this snapshot when the endpoint is unavailable. Institution labels,
+          years and filter vocabulary are read from the selected source. Use
+          Refresh data to discover new records immediately; cached metadata
+          expires after five minutes. Light mode and Dark mode save your
+          preference on this device.
+        </p>
+        <h3>Missing is different from zero</h3>
+        <p>
+          Available years are discovered from observations. The ETL generally
+          omits zero cells; a missing result can mean zero, unavailable data or
+          no coverage. Charts leave missing years as gaps. Birth-year ranges and
+          unknown birth years remain separate recorded groups.
+        </p>
+        <h3>Comparisons need context</h3>
+        <p>
+          N+ uses each program’s normal duration, which can be four or five
+          years. Mean-age queries use exact birth years only. Cohort and
+          postgraduate pipeline indicators are aggregate proxies, not individual
+          student tracking. Metadata does not encode historical university
+          reorganizations.
+        </p>
+        <h3>Counts and percentages</h3>
+        <p>
+          Totals sum the observed counts for the active filters. Female share is
+          calculated within that selected population. Counts from different
+          datasets or different years must not be added as if they were unique
+          people.
+        </p>
+        <p>
+          The catalogue contains the 41 corrected thesis queries. Four-year
+          cohort restrictions, the postgraduate scope and the DEP staff query
+          follow the corrected edition dated 8 October 2026.
+        </p>
+      </div>
+    </dialog>
+    <dialog id="query-dialog" aria-labelledby="query-dialog-title">
+      <div class="dialog-heading">
+        <h2 id="query-dialog-title">Query and active filters</h2>
+        <button class="close-button" data-close aria-label="Close query">
+          ×
+        </button>
+      </div>
+      <div class="dialog-content">
+        <p id="query-explanation"></p>
+        <pre id="filter-code" class="filter-code"></pre>
+        <button id="copy-query" class="button secondary compact">
+          Copy SPARQL
+        </button>
+        <pre id="explorer-code" class="code-block"></pre>
+      </div>
+    </dialog>
+    <div class="toast" id="toast" role="status" hidden></div>
+  </body>
+</html>

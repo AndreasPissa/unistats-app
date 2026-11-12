@@ -1,0 +1,122 @@
+[
+  {
+    "id": "Q1",
+    "catalogueId": "04_city_region",
+    "title": "Student population by city and region",
+    "sha256": "c6bcae8fc215c25ac0abf7f9a8a7771bc88aaa0ddebf4f6856bf6c5ba3601633"
+  },
+  {
+    "id": "Q2",
+    "catalogueId": "04_gender_share",
+    "title": "Student gender representation",
+    "sha256": "8d37af83000075dee0f6ebdf68011b5a7612f64ab69975e3752c67fa226adf01"
+  },
+  {
+    "id": "Q3",
+    "catalogueId": "04_nplus_gender_gap",
+    "title": "Beyond normal duration, by gender",
+    "sha256": "2567613547335e51f779a0cee64e4c9baf6989bf5b91e1d17b41b3b4b19bc824"
+  },
+  {
+    "id": "Q4",
+    "catalogueId": "04_program_trend",
+    "title": "One undergraduate program over time",
+    "sha256": "d6fc2da068c5c0ea67b732db80cc1997323f92a2eb99580616286ecfa16390c3"
+  },
+  {
+    "id": "Q5",
+    "catalogueId": "04_sai",
+    "title": "Study accumulation index",
+    "sha256": "083a51b9430e51989a8c1fdd4caf860cfe8fc633868dc7b92ce571134abd9ba2"
+  },
+  {
+    "id": "Q6",
+    "catalogueId": "05_average_age",
+    "title": "Average postgraduate age",
+    "sha256": "5429260625124b3fa479bc4cc88344aaa55b4bf0ea3aca958f1b15633ad96ff3"
+  },
+  {
+    "id": "Q7",
+    "catalogueId": "05_msc_phd_gender",
+    "title": "MSc and PhD gender representation",
+    "sha256": "a4daebc9d7a39beedc4adfa56c14f753d35f86cd81775fb38e00c0a2de44c891"
+  },
+  {
+    "id": "Q8",
+    "catalogueId": "06_average_age",
+    "title": "Average undergraduate age",
+    "sha256": "6144888c11539915455f55668f707ef3b8e8dfe40e0b2cc39e307272b1254740"
+  },
+  {
+    "id": "Q9",
+    "catalogueId": "06_freshmen_non18",
+    "title": "First-year students outside age 18",
+    "sha256": "4c5007ca358173159bb6864ba67279547ac0fc738b87c418b97c3bc1577952c7"
+  },
+  {
+    "id": "Q10",
+    "catalogueId": "06_ger",
+    "title": "Female representation at entry",
+    "sha256": "e1fc80aca472585152a2a1b4d41c78479741c2a17c5484d896bbcc5075ff7a06"
+  },
+  {
+    "id": "Q11",
+    "catalogueId": "08_gender_percentage",
+    "title": "Graduate gender representation",
+    "sha256": "b14845dc3adc92e350b1639591722237c9bcac590b22db79668b3a6045094f15"
+  },
+  {
+    "id": "Q12",
+    "catalogueId": "08_grade_percentage",
+    "title": "Degree-grade distribution",
+    "sha256": "b517df2af32f0046c6d7dd72ed45c330b6c4297209d28a414feb5a3c47cb77b3"
+  },
+  {
+    "id": "Q13",
+    "catalogueId": "09_average_age",
+    "title": "Average graduate age",
+    "sha256": "22bc247ee2db2298101f8b074858a14064c725ce20817ed35363fcefe4fea964"
+  },
+  {
+    "id": "Q14",
+    "catalogueId": "21_broader_categories",
+    "title": "Teaching staff by broader category",
+    "sha256": "490bb6b51d8d628ca9acb5957a4dc1774c5afb0cc9f95285aa6e75d17db67d98"
+  },
+  {
+    "id": "Q15",
+    "catalogueId": "21_staff_category",
+    "title": "Teaching staff by category",
+    "sha256": "052528331a0407af1d7acc774cb58c13727e1b1857182af01211158d77122d66"
+  },
+  {
+    "id": "Q16",
+    "catalogueId": "22_master_filterable",
+    "title": "External teaching staff",
+    "sha256": "e0085531508f219a0069dbfd5b1a08971eaf6650c71c698e8ab7311f7a0b4150"
+  },
+  {
+    "id": "Q17",
+    "catalogueId": "X04_students_per_staff",
+    "title": "Students per teaching staff member",
+    "sha256": "cc6465a238f1a9284e3cad877be374ac89b8d483f207eb5003b84bf905a3bb63"
+  },
+  {
+    "id": "Q18",
+    "catalogueId": "X05_students_per_dep",
+    "title": "Students per DEP member",
+    "sha256": "f3c94440720fc196f6815a987c3ddb8eb92e355fab0adda8ef3dab7c852ff5be"
+  },
+  {
+    "id": "Q19",
+    "catalogueId": "X06_gapri",
+    "title": "Gender academic pipeline representation",
+    "sha256": "b51a531ad7b664b8d7cc8a8540754a95f71f85d0c569874942eae12ff4a4ae04"
+  },
+  {
+    "id": "Q20",
+    "catalogueId": "G01_sai_by_city_region",
+    "title": "Study accumulation by location",
+    "sha256": "c23da967672dd843f3dd7e61a7bec1732a857a329d6a698f38071624888181b5"
+  }
+]

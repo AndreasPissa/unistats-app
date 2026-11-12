@@ -1,0 +1,251 @@
+{
+  "prepared": "2026-10-08",
+  "description": "Copies of supplied project outputs; original source files were not modified. Preparation date does not imply an observation date.",
+  "querySource": "UniStats_SPARQL_Query_Catalogue_Corrected_2026-10-08.pdf / embedded ZIP",
+  "files": [
+    {
+      "file": "data/rdf/04_all.ttl",
+      "source": "rdf_output\\04\\04_all.ttl",
+      "sha256": "d0e9e4271882694bec5a4b9c16b255c82f4e56e11b064a0614a6fc24cf5b91fe",
+      "bytes": 2131382
+    },
+    {
+      "file": "data/rdf/05D_all.ttl",
+      "source": "rdf_output\\05D\\05D_all.ttl",
+      "sha256": "4dafb4b8a7126f17d67460d77719c7f4fe51be8e476de56697bc9270f2ca8b68",
+      "bytes": 6408691
+    },
+    {
+      "file": "data/rdf/05M_all.ttl",
+      "source": "rdf_output\\05M\\05M_all.ttl",
+      "sha256": "fcb4627398e53f62223fb5745cec6b70912c9b44b25cb72cd73ce8e6144650de",
+      "bytes": 8008159
+    },
+    {
+      "file": "data/rdf/05P_all.ttl",
+      "source": "rdf_output\\05P\\05P_all.ttl",
+      "sha256": "95efd1dab15e47f8b72ab096378b61325f88b45b25172cee9397bdc6dc9c5741",
+      "bytes": 5968893
+    },
+    {
+      "file": "data/rdf/06_all.ttl",
+      "source": "rdf_output\\06\\06_all.ttl",
+      "sha256": "4063d19a081471e350eea5a14ae9e44c7d129fc9de03405ddb5e95463b5af014",
+      "bytes": 21374740
+    },
+    {
+      "file": "data/rdf/08_all.ttl",
+      "source": "rdf_output\\08\\08_all.ttl",
+      "sha256": "835f5b45758d39c5c5b62b74f26b192479aa32ed331b21189bf674752ce4b6a2",
+      "bytes": 900372
+    },
+    {
+      "file": "data/rdf/09D_all.ttl",
+      "source": "rdf_output\\09D\\09D_all.ttl",
+      "sha256": "e377211f23c72e373e2c4e8f84b5a0ed53db1ee8da634d8e8ba6ba9c7124e12d",
+      "bytes": 879637
+    },
+    {
+      "file": "data/rdf/09M_all.ttl",
+      "source": "rdf_output\\09M\\09M_all.ttl",
+      "sha256": "c8a0fa12c09a7499ce04b3fe4ad5fe99c06e5a88147ddaca09a53ef2ac887347",
+      "bytes": 4398107
+    },
+    {
+      "file": "data/rdf/09P_all.ttl",
+      "source": "rdf_output\\09P\\09P_all.ttl",
+      "sha256": "e9b54741f6c0ee7e05834a9a844552b9404ce91e7a9f0b74722d6b705301afd0",
+      "bytes": 3087232
+    },
+    {
+      "file": "data/rdf/21_all.ttl",
+      "source": "rdf_output\\21\\21_all.ttl",
+      "sha256": "07ef238c25f3699862fd2dada04a275f3bd517776c52e8266cab244e78e60cc8",
+      "bytes": 1924014
+    },
+    {
+      "file": "data/rdf/22_all.ttl",
+      "source": "rdf_output\\22\\22_all.ttl",
+      "sha256": "2bb19c7e234d39e58d1be137f4f549bf4cf6cf1c31c4ae506752cf3a60f900f7",
+      "bytes": 508518
+    },
+    {
+      "file": "data/rdf/concepts_21.ttl",
+      "source": "User-supplied Downloads/concepts_21.ttl",
+      "sha256": "1b9adcb0dc14330a43ede7737634a6b4b0b42ed6e6135517e4987d1c34fcb61d",
+      "bytes": 7494
+    },
+    {
+      "file": "data/rdf/sxoles_complete.ttl",
+      "source": "User-supplied Downloads/sxoles_complete.ttl",
+      "sha256": "9e71a4adf5ece30dce63e21551c8628c7355214a1ac85840146435c10ab52e33",
+      "bytes": 57722
+    }
+  ],
+  "queries": [
+    {
+      "file": "queries/00_dataset_inventory.rq",
+      "sha256": "bdeef990584f914ec86292c453cb651302454ec1dbadcf5d1a2c0443af7af4ab"
+    },
+    {
+      "file": "queries/01_school_metadata.rq",
+      "sha256": "c628f412c0f5ff61bb8c0467fa5a4788ebce3429d1b27b1fe4d849a77e330a3d"
+    },
+    {
+      "file": "queries/04_city_region.rq",
+      "sha256": "08032d778f62c2c5f408faf23adc21584515744e38eb31eed879710e22f07d07"
+    },
+    {
+      "file": "queries/04_gender_share.rq",
+      "sha256": "4e58a53334e03fc19de44c5c96fadc45b59e038847105e295897bc0fc2ebdbc4"
+    },
+    {
+      "file": "queries/04_master_filterable.rq",
+      "sha256": "f136f0d26531ec9f4486e22b1a3cee3a9200c2a96199223338a7a3e603f837e8"
+    },
+    {
+      "file": "queries/04_nplus_gender_gap.rq",
+      "sha256": "12d4b2a6fd89f55a02724b0e6d1f49ee33d00e59c8a3d06dc664f2855120629b"
+    },
+    {
+      "file": "queries/04_program_trend.rq",
+      "sha256": "55d2220a2ef8dfa905ae4b54d08f6a17ac521512e5428a3df23f2daa9c51e705"
+    },
+    {
+      "file": "queries/04_sai.rq",
+      "sha256": "52c515feb57f04f5b88241462002670518487bf58429c17c99d1cdb31efcd044"
+    },
+    {
+      "file": "queries/04_studyyear_values.rq",
+      "sha256": "69e67aa2b8bf6ee29792bbad02dfdada2414a162ad922c2ff317d91e8d8fa995"
+    },
+    {
+      "file": "queries/05_average_age.rq",
+      "sha256": "64f12283b6ca5979a5f9248fd8d9e96c691e0fdb4c0f430b896526cf34035ec8"
+    },
+    {
+      "file": "queries/05_city_region_age.rq",
+      "sha256": "c5b00c8f43324c5ce781c419a622da41ccfd1760e02f2eba5f1e023fa40280b3"
+    },
+    {
+      "file": "queries/05_master_filterable.rq",
+      "sha256": "4ade78107a3be08cab7ede821e9ad3b7c7aa4bc7ecbe25b21589a518f2a68f96"
+    },
+    {
+      "file": "queries/05_msc_phd_gender.rq",
+      "sha256": "c6ed2e5aab49c57698f84e4b1d50ad98a8d7ce2f97e5aae9add2ddd46e74d390"
+    },
+    {
+      "file": "queries/06_average_age.rq",
+      "sha256": "3c63db2824dadace525e32746150c03fff981e1ff8c11defa16c9f3e8c742784"
+    },
+    {
+      "file": "queries/06_freshmen_non18.rq",
+      "sha256": "6d3086cb994a9bbe4d782dcb5fb4dafcd1df9d7d6e9a75f5ccb174a2e7a20a77"
+    },
+    {
+      "file": "queries/06_ger.rq",
+      "sha256": "e5c85bb8998d2b5cf3778c9e8b4caab02825f22a3e98b7d9300f6be392c319b0"
+    },
+    {
+      "file": "queries/06_master_filterable.rq",
+      "sha256": "d2bcec2fe58cc736a14d464a8a30ad325fa9c43a0380655176760c33699b6630"
+    },
+    {
+      "file": "queries/08_city_region_grade.rq",
+      "sha256": "98775d0d728a47129b20bbf51ef4f8f178c407c8d8039df7686237db0fa952f2"
+    },
+    {
+      "file": "queries/08_gender_percentage.rq",
+      "sha256": "3cbf43733743f089dd1e42ac6bdb9decc3b4584e6edd5fcf3b3be1b7edde4cd1"
+    },
+    {
+      "file": "queries/08_grade_percentage.rq",
+      "sha256": "7f57cad39e12dc52163a62f02be526f9eb65cdbf29963832558dc99e40f8f2fb"
+    },
+    {
+      "file": "queries/08_grade_values.rq",
+      "sha256": "4ed369f81900d2ba0e9a0dd012e807c847cca7e77f5fc6c9b7ef47b422da5214"
+    },
+    {
+      "file": "queries/08_master_filterable.rq",
+      "sha256": "2df0c953a6e0d2d170676844bf87bd36b2c36ae0b5c1110d65067b1e05993f0a"
+    },
+    {
+      "file": "queries/09_average_age.rq",
+      "sha256": "67cc668ba01767612c0f8addf3a81ee907ac3b23f76b3a4dad7e870891ef21d3"
+    },
+    {
+      "file": "queries/09_city_region_age.rq",
+      "sha256": "5a4a63d6ef77cfac5757e74454044ec85d5078436aa3c31a62cf76d1cb52ca3d"
+    },
+    {
+      "file": "queries/09_master_filterable.rq",
+      "sha256": "5d793d5689a77717ca8417ce39a70c7836260629d2a7980d781e2d1991d02b6b"
+    },
+    {
+      "file": "queries/21_broader_categories.rq",
+      "sha256": "78bd6a304f4ffe3b1a31fa47ed3a5a4b41fe1d0f9435f90e0ade6a20e880b55b"
+    },
+    {
+      "file": "queries/21_master_filterable.rq",
+      "sha256": "8d9adc2f3ed455cde54c2f11f3b97739a1377e7c04bb4bc3b3ff6b12cd7cb0fc"
+    },
+    {
+      "file": "queries/21_staff_category.rq",
+      "sha256": "18ba4860ccb1e5d67a906184719f6f9404d6c43eea051c54b9e8c7a1bc288d1b"
+    },
+    {
+      "file": "queries/22_master_filterable.rq",
+      "sha256": "3d65e65447e69cce90557222cb79206ba2dde06fde1a615b120cec06e4e02147"
+    },
+    {
+      "file": "queries/G01_sai_by_city_region.rq",
+      "sha256": "c66d34a9b6ed28c0a12330f30aa53c63b872fc609066fa34def6f4cff85effa5"
+    },
+    {
+      "file": "queries/G02_gender_by_city_region.rq",
+      "sha256": "f276056748dd052910ddc138e50edf618b43512f74939397a785df0d1c00bdb3"
+    },
+    {
+      "file": "queries/X01_cohort_2020_2024.rq",
+      "sha256": "4e95b305d69e0ddd997d0da04ea7873527b0a02bc33a05f6411198c52b32a07a"
+    },
+    {
+      "file": "queries/X02_cohort_general.rq",
+      "sha256": "cfdc54428a18f4c7764aa480f33b2e1a3ee5b09207f3ed4e8384a7e6c9d6929e"
+    },
+    {
+      "file": "queries/X03_delta_otgr.rq",
+      "sha256": "f5a28054c2123e82a051531683079b31b19b335fdeaf7a2136013b3aae39dcdd"
+    },
+    {
+      "file": "queries/X04_students_per_staff.rq",
+      "sha256": "ed8a74d4b2150ce2119e9d7c4ab3457966a1a2936e2f06c189097fa639d83a84"
+    },
+    {
+      "file": "queries/X05_students_per_dep.rq",
+      "sha256": "d27fb031b8e585a36c9956efa0857ace67c34b8fb2f5c98705e6f16ca578f2f8"
+    },
+    {
+      "file": "queries/X06_gapri.rq",
+      "sha256": "61f8a4c46a074dc2cbc9c3229950891586df07ac02328f81fe28e4f09487cfe3"
+    },
+    {
+      "file": "queries/X07_pgr.rq",
+      "sha256": "8f60669a5cd2e6eb4cf6a93ffd7ee43df99cbe2131152d611a1114cdc8e141da"
+    },
+    {
+      "file": "queries/X08_dii.rq",
+      "sha256": "bd3bed0dd45b7eaef6f233725eff590a823241ead0cdd85ed114309e7da8c100"
+    },
+    {
+      "file": "queries/X09_gpr.rq",
+      "sha256": "c89005bf14b88c51027e3cf5a89a09dcbc35931a67d6d73bb4981fa477d5458e"
+    },
+    {
+      "file": "queries/X10_external_staff_reliance.rq",
+      "sha256": "1f842d1081fdd9afae1a08039731d7222089da7d74616c4d4acecdffd67d612a"
+    }
+  ]
+}

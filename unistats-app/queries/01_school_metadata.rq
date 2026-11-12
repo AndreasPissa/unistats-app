@@ -1,0 +1,44 @@
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX dim: <http://www.ics.forth.gr/uniStats/dimension/>
+PREFIX res: <http://www.ics.forth.gr/uniStats/resource/>
+PREFIX uni: <http://www.ics.forth.gr/uniStats/ontology/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX staffCat: <http://www.ics.forth.gr/uniStats/resource/staffCategory/>
+SELECT ?department ?deptLabelEl ?deptLabelEn ?lat ?long ?city ?region
+       ?school ?schoolLabelEl ?schoolLabelEn
+       ?university ?uniLabelEl ?uniLabelEn
+       ?program ?programType ?durationYears
+FROM <http://www.ics.forth.gr/isl/uniStats>
+FROM <http://www.ics.forth.gr/isl/uniStats_departments>
+FROM <http://www.ics.forth.gr/isl/uniStats/personnel>
+WHERE {
+  ?department rdf:type uni:Department .
+  OPTIONAL { ?department rdfs:label ?deptLabelEl FILTER(lang(?deptLabelEl) = "el") }
+  OPTIONAL { ?department rdfs:label ?deptLabelEn FILTER(lang(?deptLabelEn) = "en") }
+  OPTIONAL { ?department geo:lat ?lat }
+  OPTIONAL { ?department geo:long ?long }
+  OPTIONAL {
+    ?department uni:hasCity ?city .
+    OPTIONAL { ?city uni:hasRegion ?region }
+  }
+  OPTIONAL {
+    ?school uni:hasDepartment ?department .
+    OPTIONAL { ?school rdfs:label ?schoolLabelEl FILTER(lang(?schoolLabelEl) = "el") }
+    OPTIONAL { ?school rdfs:label ?schoolLabelEn FILTER(lang(?schoolLabelEn) = "en") }
+    OPTIONAL {
+      ?university uni:hasSchool ?school .
+      OPTIONAL { ?university rdfs:label ?uniLabelEl FILTER(lang(?uniLabelEl) = "el") }
+      OPTIONAL { ?university rdfs:label ?uniLabelEn FILTER(lang(?uniLabelEn) = "en") }
+    }
+  }
+  OPTIONAL {
+    ?department uni:hasUniversityProgram ?program .
+    OPTIONAL { ?program uni:hasUniversityProgramType ?programType }
+    OPTIONAL { ?program uni:officialStudyDurationYears ?durationYears }
+  }
+}
+ORDER BY ?university ?school ?department ?program

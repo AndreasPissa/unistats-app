@@ -1,0 +1,29 @@
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX dim: <http://www.ics.forth.gr/uniStats/dimension/>
+PREFIX res: <http://www.ics.forth.gr/uniStats/resource/>
+PREFIX uni: <http://www.ics.forth.gr/uniStats/ontology/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX staffCat: <http://www.ics.forth.gr/uniStats/resource/staffCategory/>
+SELECT ?academicYear ?city ?region
+       (SUM(IF(?studyYear=res:BeyondNormalYears,?count,0)) AS ?nPlusStudents)
+       (SUM(?count) AS ?totalStudents)
+       (ROUND((SUM(IF(?studyYear=res:BeyondNormalYears,?count,0.0))/SUM(?count))*10000.0)/100.0 AS ?SAIrel)
+FROM <http://www.ics.forth.gr/isl/uniStats>
+FROM <http://www.ics.forth.gr/isl/uniStats_departments>
+FROM <http://www.ics.forth.gr/isl/uniStats/personnel>
+WHERE {
+  ?o qb:dataSet <http://www.ics.forth.gr/uniStats/dataset/studentsByStudyYearDataset> ;
+     dim:academicYear ?academicYear ; dim:program ?program ; dim:studyYear ?studyYear ; dim:count ?count .
+  ?department uni:hasUniversityProgram ?program ; uni:hasCity ?city .
+  OPTIONAL { ?city uni:hasRegion ?region }
+  # VALUES ?academicYear { res:AY2023_2024 }
+  # VALUES ?city { <CITY_URI> }
+  # VALUES ?region { <REGION_URI> }
+}
+GROUP BY ?academicYear ?city ?region
+HAVING(SUM(?count)>0)
+ORDER BY ?academicYear DESC(?SAIrel)

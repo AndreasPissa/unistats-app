@@ -1,0 +1,6 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+SELECT (COUNT(DISTINCT ?class) AS ?count) WHERE { { SELECT DISTINCT ?s ?p ?o WHERE {
+VALUES ?g { <http://www.ics.forth.gr/isl/uniStats> <http://www.ics.forth.gr/isl/uniStats/personnel> <http://www.ics.forth.gr/isl/uniStats_departments> }
+GRAPH ?g { ?s ?p ?o }
+} } FILTER(?p=rdf:type) BIND(?o AS ?class) }

@@ -1,0 +1,17 @@
+{
+  "startedAt": "2026-11-12T09:12:48.810222+00:00",
+  "endpoint": "http://93.115.20.167:8890/sparql",
+  "graphs": [
+    "http://www.ics.forth.gr/isl/uniStats",
+    "http://www.ics.forth.gr/isl/uniStats/personnel",
+    "http://www.ics.forth.gr/isl/uniStats_departments"
+  ],
+  "python": "3.11.5",
+  "platform": "Windows",
+  "runs": 5,
+  "timeoutSeconds": 300,
+  "timing": "HTTP request through JSON conversion; sequential requests; no application cache or explicit warmup; server caches not cleared",
+  "statisticsReference": "https://colab.research.google.com/drive/1k_PScEOvqDdrojLxMCgwOtfTR6nLpnW4",
+  "benchmarkReference": "https://colab.research.google.com/drive/1-f6CQkm--rboQ8849_yiGhtXt-A8Dlo1",
+  "finishedAt": "2026-11-12T09:14:24.483209+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "unistats-explorer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Plain HTML, CSS and JavaScript explorer for the UniStats RDF database",
+  "scripts": {
+    "postinstall": "node scripts/vendor.mjs",
+    "check": "node --check public/js/theme.js && node --check public/js/app.js && node --check public/js/ai.js && node --check public/js/charts.js && node --check public/js/institutions.js && node --check public/js/map.js && node --check public/js/map-basemap.js",
+    "test:ui": "playwright test",
+    "format": "prettier --write public/index.html public/css/styles.css public/js/*.js scripts/*.mjs tests/*.spec.js playwright.config.js package.json"
+  },
+  "dependencies": {
+    "chart.js": "4.5.1",
+    "leaflet": "1.9.4",
+    "leaflet.markercluster": "1.5.3",
+    "leaflet.vectorgrid": "1.3.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.0",
+    "prettier": "3.9.9"
+  }
+}

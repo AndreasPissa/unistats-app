@@ -1,0 +1,159 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix staffCat: <http://www.ics.forth.gr/uniStats/resource/staffCategory/> .
+
+# ============================================================
+# TOP CONCEPT (ΓΕΝΙΚΟ ΣΥΝΟΛΟ)
+# ============================================================
+
+staffCat:AllTeachingStaff a skos:Concept ;
+    skos:prefLabel "Γενικό Σύνολο Διδασκόντων"@el ;
+    rdfs:label "All Teaching Staff"@en .
+
+# ============================================================
+# 1. ΤΑΚΤΙΚΟ ΔΙΔΑΚΤΙΚΟ - ΕΡΕΥΝΗΤΙΚΟ ΠΡΟΣΩΠΙΚΟ (ΔΕΠ)
+# ============================================================
+
+staffCat:RegularTeachingResearchStaff a skos:Concept ;
+    skos:prefLabel "Τακτικό Διδακτικό - Ερευνητικό Προσωπικό (ΔΕΠ)"@el ;
+    rdfs:label "Regular Teaching and Research Staff"@en ;
+    skos:broader staffCat:AllTeachingStaff .
+
+staffCat:Professor a skos:Concept ;
+    skos:prefLabel "Καθηγητές"@el ;
+    rdfs:label "Professors"@en ;
+    skos:broader staffCat:RegularTeachingResearchStaff .
+
+staffCat:AssociateProfessor a skos:Concept ;
+    skos:prefLabel "Αναπληρωτές Καθηγητές"@el ;
+    rdfs:label "Associate Professors"@en ;
+    skos:broader staffCat:RegularTeachingResearchStaff .
+
+staffCat:AssistantProfessor a skos:Concept ;
+    skos:prefLabel "Επίκουροι Καθηγητές"@el ;
+    rdfs:label "Assistant Professors"@en ;
+    skos:broader staffCat:RegularTeachingResearchStaff .
+
+staffCat:Lecturer a skos:Concept ;
+    skos:prefLabel "Λέκτορες"@el ;
+    rdfs:label "Lecturers"@en ;
+    skos:broader staffCat:RegularTeachingResearchStaff .
+
+# ============================================================
+# 2. ΕΚΤΑΚΤΟ ΔΙΔΑΚΤΙΚΟ ΠΡΟΣΩΠΙΚΟ
+# ============================================================
+
+staffCat:TemporaryTeachingStaff a skos:Concept ;
+    skos:prefLabel "Έκτακτο Διδακτικό Προσωπικό"@el ;
+    rdfs:label "Temporary Teaching Staff"@en ;
+    skos:broader staffCat:AllTeachingStaff .
+
+staffCat:VisitingProfessor a skos:Concept ;
+    skos:prefLabel "Επισκέπτες Καθηγητές"@el ;
+    rdfs:label "Visiting Professors"@en ;
+    skos:broader staffCat:TemporaryTeachingStaff .
+
+staffCat:PostdoctoralResearcher a skos:Concept ;
+    skos:prefLabel "Μεταδιδακτορικοί Ερευνητές"@el ;
+    rdfs:label "Postdoctoral Researchers"@en ;
+    skos:broader staffCat:TemporaryTeachingStaff .
+
+staffCat:AssignedTeachingStaff a skos:Concept ;
+    skos:prefLabel "Εντεταλμένοι Διδασκαλίας"@el ;
+    rdfs:label "Adjunct Lecturers / Assigned Teaching Staff"@en ;
+    skos:broader staffCat:TemporaryTeachingStaff .
+
+staffCat:UniversityScholar a skos:Concept ;
+    skos:prefLabel "Πανεπιστημιακοί Υπότροφοι"@el ;
+    rdfs:label "University Fellows / Academic Scholars"@en ;
+    skos:broader staffCat:TemporaryTeachingStaff .
+
+staffCat:PD407 a skos:Concept ;
+    skos:prefLabel "Συμβασιούχοι Ν. 407/80"@el ;
+    rdfs:label "Contract Teaching Staff (P.D. 407/80)"@en ;
+    skos:broader staffCat:TemporaryTeachingStaff .
+
+# ============================================================
+# 3. ΣΥΝΕΡΓΑΖΟΜΕΝΟ ΕΡΕΥΝΗΤΙΚΟ ΠΡΟΣΩΠΙΚΟ (ΣΕΠ)
+# ============================================================
+
+staffCat:CollaboratingResearchStaff a skos:Concept ;
+    skos:prefLabel "Συνεργαζόμενο Ερευνητικό Προσωπικό (ΣΕΠ)"@el ;
+    rdfs:label "Collaborating Research Staff"@en ;
+    skos:broader staffCat:AllTeachingStaff .
+
+staffCat:CollaboratingResearchStaffWithPhD a skos:Concept ;
+    skos:prefLabel "ΣΕΠ - Με Διδακτορικό Δίπλωμα"@el ;
+    rdfs:label "Collaborating Research Staff with Doctorate"@en ;
+    skos:broader staffCat:CollaboratingResearchStaff .
+
+staffCat:CollaboratingResearchStaffWithoutPhD a skos:Concept ;
+    skos:prefLabel "ΣΕΠ - Χωρίς Διδακτορικό Δίπλωμα"@el ;
+    rdfs:label "Collaborating Research Staff without Doctorate"@en ;
+    skos:broader staffCat:CollaboratingResearchStaff .
+
+# ============================================================
+# 4. ΕΙΔΙΚΟ ΕΡΓΑΣΤΗΡΙΑΚΟ ΔΙΔΑΚΤΙΚΟ ΠΡΟΣΩΠΙΚΟ (ΕΔΙΠ)
+# ============================================================
+
+staffCat:EDIP a skos:Concept ;
+    skos:prefLabel "Ειδικό Εργαστηριακό Διδακτικό Προσωπικό (ΕΔΙΠ)"@el ;
+    rdfs:label "Special Laboratory Teaching Staff (EDIP)"@en ;
+    skos:broader staffCat:AllTeachingStaff .
+
+# ============================================================
+# 5. ΕΙΔΙΚΟΙ ΜΕΤΑΠΤΥΧΙΑΚΟΙ ΥΠΟΤΡΟΦΟΙ / ΕΕΠ
+# ============================================================
+
+staffCat:EEP a skos:Concept ;
+    skos:prefLabel "Ειδικοί Μεταπτυχιακοί Υπότροφοι (ΕΕΠ)"@el ;
+    rdfs:label "Special Educational Staff / Postgraduate Fellows (EEP)"@en ;
+    skos:broader staffCat:AllTeachingStaff .
+
+# ============================================================
+# 6. ΒΟΗΘΗΤΙΚΟ ΔΙΔΑΚΤΙΚΟ ΠΡΟΣΩΠΙΚΟ
+# ============================================================
+
+staffCat:AuxiliaryTeachingStaff a skos:Concept ;
+    skos:prefLabel "Βοηθητικό Διδακτικό Προσωπικό"@el ;
+    rdfs:label "Auxiliary Teaching Staff"@en ;
+    skos:broader staffCat:AllTeachingStaff .
+
+staffCat:CuratorWithPhD a skos:Concept ;
+    skos:prefLabel "Επιμελητές με PhD"@el ;
+    rdfs:label "Curators with PhD"@en ;
+    skos:broader staffCat:AuxiliaryTeachingStaff .
+	
+staffCat:CuratorWithoutPhD a skos:Concept ;
+    skos:prefLabel "Επιμελητές χωρίς PhD"@el ;
+    rdfs:label "Curators withoudPhD"@en ;
+    skos:broader staffCat:AuxiliaryTeachingStaff .
+
+staffCat:AssistantWithPhD a skos:Concept ;
+    skos:prefLabel "Βοηθοί με PhD"@el ;
+    rdfs:label "Teaching Assistants with PhD"@en ;
+    skos:broader staffCat:AuxiliaryTeachingStaff .
+
+staffCat:AssistantWithoutPhD a skos:Concept ;
+    skos:prefLabel "Βοηθοί χωρίς PhD"@el ;
+    rdfs:label "Teaching Assistants without PhD"@en ;
+    skos:broader staffCat:AuxiliaryTeachingStaff .
+
+staffCat:ScientificAssociateWithPhD a skos:Concept ;
+    skos:prefLabel "Επιστημονικοί Συνεργάτες με PhD"@el ;
+    rdfs:label "Scientific Associates with PhD"@en ;
+    skos:broader staffCat:AuxiliaryTeachingStaff .
+
+staffCat:ScientificAssociateWithoutPhD a skos:Concept ;
+    skos:prefLabel "Επιστημονικοί Συνεργάτες χωρίς PhD"@el ;
+    rdfs:label "Scientific Associates without PhD"@en ;
+    skos:broader staffCat:AuxiliaryTeachingStaff .
+
+# ============================================================
+# 7. ΛΟΙΠΕΣ ΠΕΡΙΠΤΩΣΕΙΣ ΔΙΔΑΣΚΟΝΤΩΝ
+# ============================================================
+
+staffCat:OtherTeachingStaff a skos:Concept ;
+    skos:prefLabel "Λοιπές περιπτώσεις διδασκόντων (Ν. 1566 κλπ)"@el ;
+    rdfs:label "Other Teaching Staff Categories"@en ;
+    skos:broader staffCat:AllTeachingStaff .

@@ -1,0 +1,8 @@
+PREFIX qb: <http://purl.org/linked-data/cube#>
+SELECT ?dataset (COUNT(DISTINCT ?obs) AS ?observations)
+FROM <http://www.ics.forth.gr/isl/uniStats>
+FROM <http://www.ics.forth.gr/isl/uniStats_departments>
+FROM <http://www.ics.forth.gr/isl/uniStats/personnel>
+WHERE { ?obs qb:dataSet ?dataset . }
+GROUP BY ?dataset
+ORDER BY ?dataset

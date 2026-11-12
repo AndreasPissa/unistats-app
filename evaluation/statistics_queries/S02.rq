@@ -1,0 +1,4 @@
+SELECT (COUNT(DISTINCT ?s) AS ?count) WHERE { { SELECT DISTINCT ?s ?p ?o WHERE {
+VALUES ?g { <http://www.ics.forth.gr/isl/uniStats> <http://www.ics.forth.gr/isl/uniStats/personnel> <http://www.ics.forth.gr/isl/uniStats_departments> }
+GRAPH ?g { ?s ?p ?o }
+} } }

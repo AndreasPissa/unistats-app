@@ -1,0 +1,249 @@
+/* Light theme overrides. The existing dark stylesheet is preserved verbatim. */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --accent: #276950;
+  --accent-hover: #174d39;
+  --accent-soft: #e1eee6;
+  --ink: #1d3027;
+  --muted: #52685b;
+  --line: #cbd8cf;
+  --surface: #ffffff;
+  --canvas: #f3f6f4;
+  --line-subtle: #dce5df;
+  --raised: #edf3ef;
+  --chart-bar: #548369;
+}
+.heading-actions {
+  flex-wrap: wrap;
+}
+#theme-toggle,
+#refresh-data {
+  white-space: nowrap;
+}
+#staff_group-control {
+  min-width: 0;
+}
+html[data-theme="light"] .campus-map {
+  background: #e5eee7;
+}
+
+html[data-theme="light"] .map-label-toggle {
+  background: #fffffff2;
+}
+
+html[data-theme="light"] .campus-map .campus-place-name {
+  background: #e5eee7e8;
+}
+
+html[data-theme="light"] .campus-map .leaflet-control-scale-line {
+  background: #ffffffdf;
+}
+
+html[data-theme="light"] .campus-map .leaflet-control-attribution {
+  background: #fffffff2;
+}
+
+html[data-theme="light"] .campus-pin-core {
+  border: 3px solid #bfd4c6;
+}
+
+html[data-theme="light"] .campus-cluster {
+  background: #e2eee6f2;
+}
+
+html[data-theme="light"] .campus-cluster span {
+  background: #deebe2;
+}
+
+html[data-theme="light"] .campus-map .leaflet-popup-content-wrapper {
+  border: 1px solid #a5bfae;
+}
+
+html[data-theme="light"] .map-tile-notice {
+  color: #74561e;
+  background: #faf1db;
+}
+
+html[data-theme="light"] *:focus-visible {
+  outline: 3px solid #357f5f;
+}
+
+html[data-theme="light"] .skip-link {
+  background: var(--surface);
+}
+
+html[data-theme="light"] .nav-item {
+  color: var(--muted);
+}
+
+html[data-theme="light"] .nav-item.active {
+  color: var(--ink);
+}
+
+html[data-theme="light"] .count-badge,
+html[data-theme="light"] .later-badge {
+  background: var(--raised);
+}
+
+html[data-theme="light"] .source-pill[data-mode="live"] {
+  color: #245b40;
+  background: #e5f1e8;
+  border-color: #bad4c1;
+}
+
+html[data-theme="light"] .source-pill[data-mode="snapshot"] {
+  color: #74561e;
+  background: #faf1db;
+  border-color: #d7c99e;
+}
+
+html[data-theme="light"] .button.primary {
+  color: #ffffff;
+}
+
+html[data-theme="light"] .button.secondary {
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+html[data-theme="light"] .button.secondary:hover {
+  border-color: var(--accent);
+}
+
+html[data-theme="light"] .filters label,
+html[data-theme="light"] .chart-toolbar label,
+html[data-theme="light"] .query-filters label,
+html[data-theme="light"] .query-chart-controls label {
+  color: var(--muted);
+}
+
+html[data-theme="light"] select,
+html[data-theme="light"] input[type="search"],
+html[data-theme="light"] textarea {
+  border: 1px solid var(--line);
+}
+
+html[data-theme="light"] input::placeholder,
+html[data-theme="light"] textarea::placeholder {
+  color: var(--muted);
+}
+
+html[data-theme="light"] .filter-chip {
+  background: #e1eee6;
+  border: 1px solid #bed3c5;
+  color: #275b40;
+}
+
+html[data-theme="light"] .loading-line.busy {
+  background: #e5eee8;
+}
+
+html[data-theme="light"] .metric {
+  border-left: 1px solid var(--line);
+}
+
+html[data-theme="light"] .segmented {
+  background: var(--canvas);
+  border: 1px solid var(--line);
+}
+
+html[data-theme="light"] .segmented .selected {
+  background: var(--surface);
+}
+
+html[data-theme="light"] .chart-toolbar {
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+html[data-theme="light"] .year-timeline {
+  background: var(--canvas);
+}
+
+html[data-theme="light"] .legend-count {
+  color: var(--ink);
+}
+
+html[data-theme="light"] .data-footnote strong {
+  color: var(--muted);
+}
+
+html[data-theme="light"] .source-message {
+  background: #f7f3df;
+  border-left: 3px solid #a0924d;
+  color: #695b22;
+}
+
+html[data-theme="light"] .message.error {
+  background: #faeae6;
+  border: 1px solid #e3c0b6;
+  color: #873b2d;
+}
+
+html[data-theme="light"] th {
+  background: var(--canvas);
+}
+
+html[data-theme="light"] td {
+  border-bottom: 1px solid var(--line-subtle);
+}
+
+html[data-theme="light"] .catalogue-list-panel {
+  background: var(--surface);
+}
+
+html[data-theme="light"] .query-option {
+  color: var(--ink);
+}
+
+html[data-theme="light"] .query-option small {
+  color: var(--muted);
+}
+
+html[data-theme="light"] .code-block {
+  background: #e7f0e9;
+  color: #2c5740;
+}
+
+html[data-theme="light"] .toast {
+  background: #e2eee6;
+}
+
+html[data-theme="light"] .dialog-heading {
+  background: var(--surface);
+}
+
+html[data-theme="light"] .dialog-content p {
+  color: var(--muted);
+}
+
+html[data-theme="light"] .sidebar {
+  background: var(--canvas);
+}
+
+html[data-theme="light"] select,
+html[data-theme="light"] input[type="search"],
+html[data-theme="light"] textarea {
+  background: var(--raised);
+}
+
+html[data-theme="light"] select:hover,
+html[data-theme="light"] input[type="search"]:hover {
+  border-color: var(--accent);
+}
+
+html[data-theme="light"] .institution-link {
+  color: #256040;
+  text-decoration-color: #639177;
+}
+
+html[data-theme="light"] .institution-link:hover {
+  color: #163b28;
+}
+
+html[data-theme="light"] .institution-link::after {
+  color: var(--muted);
+}
+
+html[data-theme="light"] .row-filter {
+  color: var(--muted);
+}

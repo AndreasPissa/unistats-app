@@ -1,0 +1,32 @@
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX dim: <http://www.ics.forth.gr/uniStats/dimension/>
+PREFIX res: <http://www.ics.forth.gr/uniStats/resource/>
+PREFIX uni: <http://www.ics.forth.gr/uniStats/ontology/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX staffCat: <http://www.ics.forth.gr/uniStats/resource/staffCategory/>
+SELECT ?academicYear ?program ?gender
+       (SUM(?count) AS ?graduatesByGender)
+       (ROUND((SUM(?count) * 10000.0) / ?totalProgramYearGraduates)/100.0 AS ?genderPercentage)
+FROM <http://www.ics.forth.gr/isl/uniStats>
+FROM <http://www.ics.forth.gr/isl/uniStats_departments>
+FROM <http://www.ics.forth.gr/isl/uniStats/personnel>
+WHERE {
+  ?obs qb:dataSet <http://www.ics.forth.gr/uniStats/dataset/graduatesByDegreeGradeDataset> ;
+       dim:academicYear ?academicYear ; dim:program ?program ; dim:gender ?gender ; dim:count ?count .
+  {
+    SELECT ?academicYear ?program (SUM(?countTotal) AS ?totalProgramYearGraduates)
+    WHERE {
+      ?obsSub qb:dataSet <http://www.ics.forth.gr/uniStats/dataset/graduatesByDegreeGradeDataset> ;
+              dim:academicYear ?academicYear ; dim:program ?program ; dim:count ?countTotal .
+    }
+    GROUP BY ?academicYear ?program
+  }
+  # VALUES ?academicYear { res:AY2023_2024 }
+  # VALUES ?gender { res:Female }
+}
+GROUP BY ?academicYear ?program ?gender ?totalProgramYearGraduates
+ORDER BY ?academicYear ?program ?gender

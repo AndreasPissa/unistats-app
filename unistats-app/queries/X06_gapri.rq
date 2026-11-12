@@ -1,0 +1,40 @@
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX dim: <http://www.ics.forth.gr/uniStats/dimension/>
+PREFIX res: <http://www.ics.forth.gr/uniStats/resource/>
+PREFIX uni: <http://www.ics.forth.gr/uniStats/ontology/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX staffCat: <http://www.ics.forth.gr/uniStats/resource/staffCategory/>
+SELECT ?academicYear ?department ?bscFemalePct ?phdFemalePct
+       (FLOOR((?phdFemalePct - ?bscFemalePct)*100.0 + 0.5)/100.0 AS ?femaleShareChangePoints)
+       (ROUND((?phdFemalePct/?bscFemalePct)*10000.0)/100.0 AS ?GAPRI)
+FROM <http://www.ics.forth.gr/isl/uniStats>
+FROM <http://www.ics.forth.gr/isl/uniStats_departments>
+FROM <http://www.ics.forth.gr/isl/uniStats/personnel>
+WHERE {
+  {
+    SELECT ?academicYear ?department
+           ((SUM(IF(?gender=res:Female,?count,0.0))/SUM(?count))*100.0 AS ?bscFemalePct)
+    WHERE {
+      ?o qb:dataSet <http://www.ics.forth.gr/uniStats/dataset/studentsByStudyYearDataset> ;
+         dim:academicYear ?academicYear ; dim:program ?program ; dim:gender ?gender ; dim:count ?count .
+      ?department uni:hasUniversityProgram ?program .
+    } GROUP BY ?academicYear ?department
+  }
+  {
+    SELECT ?academicYear ?department
+           ((SUM(IF(?gender=res:Female,?count,0.0))/SUM(?count))*100.0 AS ?phdFemalePct)
+    WHERE {
+      ?o qb:dataSet <http://www.ics.forth.gr/uniStats/dataset/studentsByBirthYearDataset> ;
+         dim:academicYear ?academicYear ; dim:program ?program ; dim:gender ?gender ; dim:count ?count .
+      ?program uni:hasUniversityProgramType res:PhD .
+      ?department uni:hasUniversityProgram ?program .
+    } GROUP BY ?academicYear ?department
+  }
+  # VALUES ?academicYear { res:AY2023_2024 }
+  FILTER(?bscFemalePct>0)
+}
+ORDER BY ?academicYear ?department

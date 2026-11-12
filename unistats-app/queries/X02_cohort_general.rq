@@ -1,0 +1,41 @@
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX dim: <http://www.ics.forth.gr/uniStats/dimension/>
+PREFIX res: <http://www.ics.forth.gr/uniStats/resource/>
+PREFIX uni: <http://www.ics.forth.gr/uniStats/ontology/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX staffCat: <http://www.ics.forth.gr/uniStats/resource/staffCategory/>
+SELECT ?entryYear ?entryAY ?graduationAY ?program ?birthYear ?entrants ?graduates
+       (ROUND((xsd:double(?graduates)/xsd:double(?entrants))*10000.0)/100.0 AS ?SOTGR)
+FROM <http://www.ics.forth.gr/isl/uniStats>
+FROM <http://www.ics.forth.gr/isl/uniStats_departments>
+FROM <http://www.ics.forth.gr/isl/uniStats/personnel>
+WHERE {
+  VALUES (?entryYear ?entryAY ?graduationAY ?birthYear) {
+    (2016 res:AY2016_2017 res:AY2019_2020 "1998"^^xsd:gYear)
+    (2018 res:AY2018_2019 res:AY2021_2022 "2000"^^xsd:gYear)
+    (2019 res:AY2019_2020 res:AY2022_2023 "2001"^^xsd:gYear)
+    (2020 res:AY2020_2021 res:AY2023_2024 "2002"^^xsd:gYear)
+  }
+  ?program uni:officialStudyDurationYears "4"^^xsd:integer .
+  {
+    SELECT ?entryAY ?program ?birthYear (SUM(?count) AS ?entrants)
+    WHERE {
+      ?o1 qb:dataSet <http://www.ics.forth.gr/uniStats/dataset/studentsByBirthYearStudyYearDataset> ;
+          dim:academicYear ?entryAY ; dim:program ?program ; dim:studyYear res:StudyYear1 ;
+          dim:birthYear ?birthYear ; dim:count ?count .
+    } GROUP BY ?entryAY ?program ?birthYear
+  }
+  {
+    SELECT ?graduationAY ?program ?birthYear (SUM(?count) AS ?graduates)
+    WHERE {
+      ?o2 qb:dataSet <http://www.ics.forth.gr/uniStats/dataset/graduatesByBirthYearDataset> ;
+          dim:academicYear ?graduationAY ; dim:program ?program ; dim:birthYear ?birthYear ; dim:count ?count .
+    } GROUP BY ?graduationAY ?program ?birthYear
+  }
+  FILTER(?entrants>0)
+}
+ORDER BY ?entryYear ?program

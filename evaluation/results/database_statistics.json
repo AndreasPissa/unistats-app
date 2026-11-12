@@ -1,0 +1,68 @@
+[
+  {
+    "metric": "Total triples",
+    "query": "S01.rq",
+    "value": 436143,
+    "elapsedSeconds": 3.2779671996831894
+  },
+  {
+    "metric": "Distinct subjects",
+    "query": "S02.rq",
+    "value": 52313,
+    "elapsedSeconds": 3.47056550020352
+  },
+  {
+    "metric": "Distinct properties",
+    "query": "S03.rq",
+    "value": 25,
+    "elapsedSeconds": 2.999807999935001
+  },
+  {
+    "metric": "Distinct objects",
+    "query": "S04.rq",
+    "value": 1974,
+    "elapsedSeconds": 3.1275156997144222
+  },
+  {
+    "metric": "Distinct classes",
+    "query": "S05.rq",
+    "value": 8,
+    "elapsedSeconds": 0.34252289962023497
+  },
+  {
+    "metric": "URI subjects",
+    "query": "S06.rq",
+    "value": 52313,
+    "elapsedSeconds": 9.151152200065553
+  },
+  {
+    "metric": "URI objects",
+    "query": "S07.rq",
+    "value": 246,
+    "elapsedSeconds": 2.5229872004128993
+  },
+  {
+    "metric": "Distinct literals",
+    "query": "S08.rq",
+    "value": 1728,
+    "elapsedSeconds": 2.768438699655235
+  },
+  {
+    "metric": "Distinct blank nodes",
+    "query": "S09.rq",
+    "value": 0,
+    "elapsedSeconds": 0.15726079978048801
+  },
+  {
+    "metric": "Data Cube observations",
+    "query": "S10.rq",
+    "value": 52080,
+    "elapsedSeconds": 0.26502030016854405
+  },
+  {
+    "metric": "Data Cube datasets",
+    "query": "S11.rq",
+    "value": 7,
+    "elapsedSeconds": 0.2023852001875639
+  }
+]

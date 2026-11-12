@@ -1,0 +1,199 @@
+{
+  "source": "cs_schools.xlsx",
+  "sha256": "9afd3feea986ad8f46c566c0920890b5446a0c3716b41735a288622664bb1a78",
+  "prepared": "2026-10-08",
+  "locations": {
+    "https://www.auth.gr/en/school/ee-en/": {
+      "latitude": 40.6273415,
+      "longitude": 22.9496087,
+      "sheet": "Sheet1",
+      "row": 2
+    },
+    "https://www.iee.ihu.gr/": {
+      "latitude": 40.6558013,
+      "longitude": 22.8023161,
+      "sheet": "Sheet1",
+      "row": 3
+    },
+    "https://www.ict.ihu.gr/": {
+      "latitude": 41.0748985,
+      "longitude": 23.5504721,
+      "sheet": "Sheet1",
+      "row": 4
+    },
+    "https://www.ee.duth.gr/": {
+      "latitude": 41.1406045,
+      "longitude": 24.891839,
+      "sheet": "Sheet1",
+      "row": 5
+    },
+    "https://www.ece.ntua.gr/": {
+      "latitude": 37.979002,
+      "longitude": 23.7801621,
+      "sheet": "Sheet1",
+      "row": 6
+    },
+    "https://ece.hmu.gr/": {
+      "latitude": 35.3176775,
+      "longitude": 25.099976,
+      "sheet": "Sheet1",
+      "row": 7
+    },
+    "https://www.icsd.aegean.gr/": {
+      "latitude": 37.795991,
+      "longitude": 26.7024766,
+      "sheet": "Sheet1",
+      "row": 8
+    },
+    "https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/ice/": {
+      "latitude": 38.0024922,
+      "longitude": 23.6739996,
+      "sheet": "Sheet1",
+      "row": 9
+    },
+    "https://ece.uowm.gr/": {
+      "latitude": 40.2788874,
+      "longitude": 21.7328198,
+      "sheet": "Sheet1",
+      "row": 10
+    },
+    "https://www.e-ce.uth.gr/": {
+      "latitude": 39.3607365,
+      "longitude": 22.9279123,
+      "sheet": "Sheet1",
+      "row": 11
+    },
+    "https://www.cse.uoi.gr/": {
+      "latitude": 39.6179552,
+      "longitude": 20.7563741,
+      "sheet": "Sheet1",
+      "row": 12
+    },
+    "https://www.ceid.upatras.gr/": {
+      "latitude": 38.2901968,
+      "longitude": 21.7931073,
+      "sheet": "Sheet1",
+      "row": 13
+    },
+    "http://www.ece.upatras.gr/": {
+      "latitude": 38.2883655,
+      "longitude": 21.7860528,
+      "sheet": "Sheet1",
+      "row": 14
+    },
+    "https://www.ece.uop.gr/": {
+      "latitude": 38.2186828,
+      "longitude": 21.7462468,
+      "sheet": "Sheet1",
+      "row": 15
+    },
+    "http://www.ece.tuc.gr/": {
+      "latitude": 35.5312745,
+      "longitude": 24.0631056,
+      "sheet": "Sheet1",
+      "row": 16
+    },
+    "http://www.csd.auth.gr/": {
+      "latitude": 40.6227155,
+      "longitude": 22.8141921,
+      "sheet": "Sheet1",
+      "row": 17
+    },
+    "https://www.cs.duth.gr/": {
+      "latitude": 40.9292981,
+      "longitude": 24.3409184,
+      "sheet": "Sheet1",
+      "row": 18
+    },
+    "http://www.di.uoa.gr/": {
+      "latitude": 37.968141,
+      "longitude": 23.7639359,
+      "sheet": "Sheet1",
+      "row": 19
+    },
+    "http://www.cs.aueb.gr/": {
+      "latitude": 37.9940707,
+      "longitude": 23.7272327,
+      "sheet": "Sheet1",
+      "row": 20
+    },
+    "https://cs.uowm.gr/": {
+      "latitude": 40.5210128,
+      "longitude": 21.2559418,
+      "sheet": "Sheet1",
+      "row": 21
+    },
+    "http://www.dib.uth.gr": {
+      "latitude": 38.9125737,
+      "longitude": 22.4253247,
+      "sheet": "Sheet1",
+      "row": 22
+    },
+    "https://dit.uth.gr/": {
+      "latitude": 38.8751521,
+      "longitude": 22.4350691,
+      "sheet": "Sheet1",
+      "row": 23
+    },
+    "https://ds.uth.gr": {
+      "latitude": 39.6275133,
+      "longitude": 22.3811964,
+      "sheet": "Sheet1",
+      "row": 24
+    },
+    "https://di.ionio.gr/": {
+      "latitude": 39.6205056,
+      "longitude": 19.9122659,
+      "sheet": "Sheet1",
+      "row": 25
+    },
+    "https://www.dit.uoi.gr/": {
+      "latitude": 39.1202799,
+      "longitude": 20.9410233,
+      "sheet": "Sheet1",
+      "row": 26
+    },
+    "http://www.csd.uoc.gr/": {
+      "latitude": 35.3141599,
+      "longitude": 25.0807825,
+      "sheet": "Sheet1",
+      "row": 27
+    },
+    "https://www.uom.gr/dai": {
+      "latitude": 40.6250169,
+      "longitude": 22.9575336,
+      "sheet": "Sheet1",
+      "row": 28
+    },
+    "http://www.cs.unipi.gr/": {
+      "latitude": 37.9487185,
+      "longitude": 23.6319106,
+      "sheet": "Sheet1",
+      "row": 29
+    },
+    "https://www.ds.unipi.gr/": {
+      "latitude": 37.9487826,
+      "longitude": 23.6319106,
+      "sheet": "Sheet1",
+      "row": 30
+    },
+    "http://dit.uop.gr/": {
+      "latitude": 37.7469404,
+      "longitude": 22.409335,
+      "sheet": "Sheet1",
+      "row": 31
+    },
+    "https://ds.uop.gr/en": {
+      "latitude": 37.1209579,
+      "longitude": 22.4285114,
+      "sheet": "Sheet1",
+      "row": 32
+    },
+    "http://www.dit.hua.gr": {
+      "latitude": 37.9622544,
+      "longitude": 23.6983322,
+      "sheet": "Sheet1",
+      "row": 33
+    }
+  }
+}

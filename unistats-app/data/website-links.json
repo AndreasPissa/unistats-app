@@ -1,0 +1,559 @@
+{
+  "checkedOn": "2026-10-08",
+  "note": "Uses supplied RDF institution identifiers and successful official-site redirects. Unconfirmed destinations retain the supplied URL; no certificate validation was bypassed. Program identifiers resolve to their parent department website.",
+  "institutions": [
+    {
+      "uri": "http://dit.uop.gr/",
+      "label": "Informatics and Telecommunications (Tripoli)",
+      "kind": "department",
+      "url": "https://dit.uop.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "http://www.cs.aueb.gr/",
+      "label": "Informatics (Athens)",
+      "kind": "department",
+      "url": "https://www.dept.aueb.gr/cs",
+      "check": "responded"
+    },
+    {
+      "uri": "http://www.cs.unipi.gr/",
+      "label": "Informatics (Piraeus)",
+      "kind": "department",
+      "url": "http://www.cs.unipi.gr/",
+      "check": "unconfirmed"
+    },
+    {
+      "uri": "http://www.csd.auth.gr/",
+      "label": "Informatics (Thessaloniki)",
+      "kind": "department",
+      "url": "https://csd.auth.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "http://www.csd.uoc.gr/",
+      "label": "Computer Science (Heraklion)",
+      "kind": "department",
+      "url": "https://www.csd.uoc.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "http://www.di.uoa.gr/",
+      "label": "Informatics and Telecommunications (Athens)",
+      "kind": "department",
+      "url": "https://www.di.uoa.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "http://www.dib.uth.gr",
+      "label": "Informatics with Applications in Biomedicine (Lamia)",
+      "kind": "department",
+      "url": "https://dib.uth.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "http://www.dit.hua.gr",
+      "label": "Informatics and Telematics (Athens)",
+      "kind": "department",
+      "url": "https://dit.hua.gr/index.php/el",
+      "check": "responded"
+    },
+    {
+      "uri": "http://www.ece.tuc.gr/",
+      "label": "Electrical and Computer Engineering (Chania)",
+      "kind": "department",
+      "url": "https://www.ece.tuc.gr/el/archi",
+      "check": "responded"
+    },
+    {
+      "uri": "http://www.ece.upatras.gr/",
+      "label": "Electrical Engineering and Computer Technology (Patras)",
+      "kind": "department",
+      "url": "http://www.ece.upatras.gr/",
+      "check": "unconfirmed"
+    },
+    {
+      "uri": "https://cs.uowm.gr/",
+      "label": "Informatics (Kastoria)",
+      "kind": "department",
+      "url": "https://cs.uowm.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://di.ionio.gr/",
+      "label": "Informatics (Corfu)",
+      "kind": "department",
+      "url": "https://di.ionio.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://dit.uth.gr/",
+      "label": "Informatics and Telecommunications (Lamia)",
+      "kind": "department",
+      "url": "https://dit.uth.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://ds.uop.gr/en",
+      "label": "Digital Systems (Sparti)",
+      "kind": "department",
+      "url": "https://ds.uop.gr/en",
+      "check": "responded"
+    },
+    {
+      "uri": "https://ds.uth.gr",
+      "label": "Digital Systems (Larissa)",
+      "kind": "department",
+      "url": "https://ds.uth.gr",
+      "check": "responded"
+    },
+    {
+      "uri": "https://ece.hmu.gr/",
+      "label": "Electrical and Computer Engineering (Heraklion)",
+      "kind": "department",
+      "url": "https://ece.hmu.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://ece.uowm.gr/",
+      "label": "Electrical and Computer Engineering (Kozani)",
+      "kind": "department",
+      "url": "https://ece.uowm.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.auth.gr/en/school/ee-en/",
+      "label": "Electrical and Computer Engineering (Thessaloniki)",
+      "kind": "department",
+      "url": "https://www.auth.gr/en/school/ee-en/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.ceid.upatras.gr/",
+      "label": "Computer Engineering and Informatics (Patras)",
+      "kind": "department",
+      "url": "https://www.ceid.upatras.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.cs.duth.gr/",
+      "label": "Informatics (Kavala)",
+      "kind": "department",
+      "url": "https://www.cs.duth.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.cse.uoi.gr/",
+      "label": "Computer Engineering and Informatics (Ioannina)",
+      "kind": "department",
+      "url": "https://www.cse.uoi.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.dit.uoi.gr/",
+      "label": "Informatics and Telecommunications (Arta)",
+      "kind": "department",
+      "url": "https://www.dit.uoi.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.ds.unipi.gr/",
+      "label": "Digital Systems (Piraeus)",
+      "kind": "department",
+      "url": "https://www.ds.unipi.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.e-ce.uth.gr/",
+      "label": "Electrical and Computer Engineering (Volos)",
+      "kind": "department",
+      "url": "https://www.e-ce.uth.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.ece.ntua.gr/",
+      "label": "Electrical and Computer Engineering (Athens)",
+      "kind": "department",
+      "url": "https://www.ece.ntua.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.ece.uop.gr/",
+      "label": "Electrical and Computer Engineering (Patras)",
+      "kind": "department",
+      "url": "https://www.ece.uop.gr/",
+      "check": "unconfirmed"
+    },
+    {
+      "uri": "https://www.ee.duth.gr/",
+      "label": "Electrical and Computer Engineering (Xanthi)",
+      "kind": "department",
+      "url": "https://www.ee.duth.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.icsd.aegean.gr/",
+      "label": "Information and Communication Systems Engineering (Samos)",
+      "kind": "department",
+      "url": "https://www.icsd.aegean.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.ict.ihu.gr/",
+      "label": "Information, Computer and Telecommunications Engineering (Serres)",
+      "kind": "department",
+      "url": "https://www.ict.ihu.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.iee.ihu.gr/",
+      "label": "Information and Electronic Engineering (Thessaloniki)",
+      "kind": "department",
+      "url": "https://www.iee.ihu.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/ice/",
+      "label": "Computer Engineering and Informatics (Egaleo)",
+      "kind": "department",
+      "url": "https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/ice/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.uom.gr/dai",
+      "label": "Applied Informatics",
+      "kind": "department",
+      "url": "https://www.uom.gr/dai",
+      "check": "responded"
+    },
+    {
+      "uri": "http://eng.aegean.gr/",
+      "label": "School of Engineering",
+      "kind": "school",
+      "url": "http://eng.aegean.gr/",
+      "check": "unconfirmed"
+    },
+    {
+      "uri": "https://duth.gr/faculty/eng/",
+      "label": "School of Engineering",
+      "kind": "school",
+      "url": "https://duth.gr/faculty/eng/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://duth.gr/faculty/sci/",
+      "label": "Faculty of Sciences",
+      "kind": "school",
+      "url": "https://duth.gr/faculty/sci/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://eng.uowm.gr/",
+      "label": "School of Engineering",
+      "kind": "school",
+      "url": "https://eng.uowm.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://hmu.gr/polytechniki-scholi/",
+      "label": "School of Engineering",
+      "kind": "school",
+      "url": "https://hmu.gr/polytechniki-scholi/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://ionio.gr/gr/studies/faculties/isi/",
+      "label": "Faculty of Information Science and Informatics",
+      "kind": "school",
+      "url": "https://ionio.gr/gr/studies/faculties/isi/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://sci.uowm.gr/",
+      "label": "Faculty of Science",
+      "kind": "school",
+      "url": "https://sci.uowm.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://uoi.gr/sxoles/polytechniki-scholi/",
+      "label": "School of Engineering",
+      "kind": "school",
+      "url": "https://uoi.gr/sxoles/polytechniki-scholi/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://uoi.gr/sxoles/scholi-pliroforikis-kai-tilepikoinonion/",
+      "label": "Faculty of Informatics and Telecommunications",
+      "kind": "school",
+      "url": "https://uoi.gr/sxoles/scholi-pliroforikis-kai-tilepikoinonion/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.auth.gr/faculty/sci/",
+      "label": "Faculty of Sciences",
+      "kind": "school",
+      "url": "https://www.auth.gr/faculty/sci/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.auth.gr/school/ee/",
+      "label": "Faculty of Engineering",
+      "kind": "school",
+      "url": "https://www.auth.gr/school/ee/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.dept.aueb.gr/el/school_of_information",
+      "label": "School of Information Sciences and Technology",
+      "kind": "school",
+      "url": "https://www.dept.aueb.gr/el/school_of_information",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.hua.gr#scholes",
+      "label": "School of Informatics and Telematics",
+      "kind": "school",
+      "url": "https://www.hua.gr#scholes",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.ihu.gr/sxoles/polytechniki-sxoli",
+      "label": "School of Engineering",
+      "kind": "school",
+      "url": "https://www.ihu.gr/sxoles/polytechniki-sxoli",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.ntua.gr/el/schools",
+      "label": "School of Engineering",
+      "kind": "school",
+      "url": "https://www.ntua.gr/el/schools",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.sse.uoc.gr/",
+      "label": "School of Sciences and Engineering",
+      "kind": "school",
+      "url": "https://www.sse.uoc.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.tuc.gr/el/scholes",
+      "label": "School of Engineering",
+      "kind": "school",
+      "url": "https://www.tuc.gr/el/scholes",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.unipi.gr/sxoli-texnologion-pliroforikis-kai-epikoinonion/",
+      "label": "School of Information and Communication Technologies",
+      "kind": "school",
+      "url": "https://www.unipi.gr/sxoli-texnologion-pliroforikis-kai-epikoinonion/",
+      "check": "unconfirmed"
+    },
+    {
+      "uri": "https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/",
+      "label": "School of Engineering",
+      "kind": "school",
+      "url": "https://www.uniwa.gr/spoydes/scholes-kai-tmimata/feng/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.uoa.gr/scholes_kai_tmimata/thetikon_epistimon",
+      "label": "School of Science",
+      "kind": "school",
+      "url": "https://www.uoa.gr/scholes_kai_tmimata/thetikon_epistimon",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.uom.gr/sis",
+      "label": "School of Information Sciences",
+      "kind": "school",
+      "url": "https://www.uom.gr/sis",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.uop.gr/polytechnic_school",
+      "label": "School of Engineering",
+      "kind": "school",
+      "url": "https://www.uop.gr/polytechnic_school",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.uop.gr/sholi-oikonomias-kai-tehnologias",
+      "label": "School of Economy and Technology",
+      "kind": "school",
+      "url": "https://www.uop.gr/sholi-oikonomias-kai-tehnologias",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.upatras.gr/education/undergraduate-studies/school-of-engineering/",
+      "label": "School of Engineering",
+      "kind": "school",
+      "url": "https://www.upatras.gr/education/undergraduate-studies/school-of-engineering/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.uth.gr/spoydes/proptychiakes/schools-departments/polytehniki-sholi",
+      "label": "School of Engineering",
+      "kind": "school",
+      "url": "https://www.uth.gr/spoydes/proptychiakes/schools-departments/polytehniki-sholi",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.uth.gr/spoydes/proptychiakes/schools-departments/sholi-tehnologias",
+      "label": "School of Technology",
+      "kind": "school",
+      "url": "https://www.uth.gr/spoydes/proptychiakes/schools-departments/sholi-tehnologias",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.uth.gr/spoydes/proptychiakes/schools-departments/sholi-thetikon-epistimon",
+      "label": "Faculty of Science",
+      "kind": "school",
+      "url": "https://www.uth.gr/spoydes/proptychiakes/schools-departments/sholi-thetikon-epistimon",
+      "check": "responded"
+    },
+    {
+      "uri": "http://tuc.gr/",
+      "label": "Technical University of Crete",
+      "kind": "university",
+      "url": "https://www.tuc.gr/el/archi",
+      "check": "responded"
+    },
+    {
+      "uri": "https://aueb.gr/",
+      "label": "Athens University of Economics and Business",
+      "kind": "university",
+      "url": "https://aueb.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://duth.gr/",
+      "label": "Democritus University of Thrace",
+      "kind": "university",
+      "url": "https://duth.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://hmu.gr/",
+      "label": "Hellenic Mediterranean University",
+      "kind": "university",
+      "url": "https://hmu.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://ionio.gr/",
+      "label": "Ionian University",
+      "kind": "university",
+      "url": "https://ionio.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://unipi.gr/",
+      "label": "University of Piraeus",
+      "kind": "university",
+      "url": "https://unipi.gr/",
+      "check": "unconfirmed"
+    },
+    {
+      "uri": "https://uoi.gr/",
+      "label": "University of Ioannina",
+      "kind": "university",
+      "url": "https://uoi.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.aegean.gr",
+      "label": "University of the Aegean",
+      "kind": "university",
+      "url": "https://www.aegean.gr",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.auth.gr/",
+      "label": "Aristotle University of Thessaloniki",
+      "kind": "university",
+      "url": "https://www.auth.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.hua.gr",
+      "label": "Harokopio University",
+      "kind": "university",
+      "url": "https://www.hua.gr",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.ihu.gr",
+      "label": "International Hellenic University",
+      "kind": "university",
+      "url": "https://www.ihu.gr",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.ntua.gr/el",
+      "label": "National Technical University of Athens",
+      "kind": "university",
+      "url": "https://www.ntua.gr/el",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.uniwa.gr/",
+      "label": "University of West Attica",
+      "kind": "university",
+      "url": "https://www.uniwa.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.uoa.gr/",
+      "label": "National and Kapodistrian University of Athens",
+      "kind": "university",
+      "url": "https://www.uoa.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.uoc.gr/",
+      "label": "University of Crete",
+      "kind": "university",
+      "url": "https://www.uoc.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.uom.gr/",
+      "label": "University of Macedonia",
+      "kind": "university",
+      "url": "https://www.uom.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.uop.gr/",
+      "label": "University of the Peloponnese",
+      "kind": "university",
+      "url": "https://www.uop.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.uowm.gr/",
+      "label": "University of Western Macedonia",
+      "kind": "university",
+      "url": "https://www.uowm.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.upatras.gr/",
+      "label": "University of Patras",
+      "kind": "university",
+      "url": "https://www.upatras.gr/",
+      "check": "responded"
+    },
+    {
+      "uri": "https://www.uth.gr/",
+      "label": "University of Thessaly",
+      "kind": "university",
+      "url": "https://www.uth.gr/",
+      "check": "responded"
+    }
+  ]
+}

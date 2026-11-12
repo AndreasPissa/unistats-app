@@ -1,0 +1,27 @@
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX dim: <http://www.ics.forth.gr/uniStats/dimension/>
+PREFIX res: <http://www.ics.forth.gr/uniStats/resource/>
+PREFIX uni: <http://www.ics.forth.gr/uniStats/ontology/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX staffCat: <http://www.ics.forth.gr/uniStats/resource/staffCategory/>
+SELECT ?academicYear ?university ?department ?staffCategory ?gender
+       (SUM(?count) AS ?externalStaff)
+FROM <http://www.ics.forth.gr/isl/uniStats>
+FROM <http://www.ics.forth.gr/isl/uniStats_departments>
+FROM <http://www.ics.forth.gr/isl/uniStats/personnel>
+WHERE {
+  ?obs qb:dataSet <http://www.ics.forth.gr/uniStats/dataset/externalTeachingStaffByCategoryDataset> ;
+       dim:academicYear ?academicYear ; dim:department ?department ;
+       dim:staffCategory ?staffCategory ; dim:gender ?gender ; dim:count ?count .
+  OPTIONAL { ?school uni:hasDepartment ?department . ?university uni:hasSchool ?school . }
+  # VALUES ?academicYear { res:AY2023_2024 }
+  # VALUES ?gender { res:Female }
+  # VALUES ?department { <http://www.csd.uoc.gr/> }
+  # VALUES ?staffCategory { staffCat:Professor }
+}
+GROUP BY ?academicYear ?university ?department ?staffCategory ?gender
+ORDER BY ?academicYear ?department ?staffCategory ?gender
